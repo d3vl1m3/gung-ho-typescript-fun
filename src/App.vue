@@ -9,7 +9,7 @@ import { Sex } from '@/enum/Sex'
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import HelloWorld from './components/HelloWorld.vue';
-  import DbSeeder from '@/seeders/DbSeeder'
+  import DbSeeder from '@/seeders/DbSeeder';
 
   /* Additional components must be handled outside of the component instance */
   @Component({
