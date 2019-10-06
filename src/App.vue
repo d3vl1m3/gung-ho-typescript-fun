@@ -9,11 +9,7 @@ import { Sex } from '@/enum/Sex'
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import HelloWorld from './components/HelloWorld.vue';
-  import CharacterEntity from '@/entities/CharacterEntity';
-  import Character from '@/models/Character';
-  import {Sex} from '@/enum/Sex';
-  import CharacterCollection from '@/models/CharacterCollection';
-  import CharacterEntityFactory from '@/factories/CharacterEntityFactory';
+  import DbSeeder from '@/seeders/DbSeeder'
 
   /* Additional components must be handled outside of the component instance */
   @Component({
@@ -21,16 +17,7 @@ import { Sex } from '@/enum/Sex'
       HelloWorld,
     },
     created() {
-      const characters = new CharacterCollection([
-        new Character('Liam', new Date('1988/10/06 GMT') , Sex.MALE),
-        new Character('Beth', new Date('1991/03/23 GMT') , Sex.FEMALE),
-        new Character('Tara', new Date('1995/12/12 GMT') , Sex.FEMALE),
-        new Character('Frank', new Date('2998/01/01 GMT') , Sex.MALE),
-      ]);
-
-      CharacterEntity.insert({
-        data: new CharacterEntityFactory(characters).items,
-      });
+      DbSeeder.init();
     },
   })
 
