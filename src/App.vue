@@ -8,8 +8,6 @@
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
   import HelloWorld from './components/HelloWorld.vue';
-  import UserCollection from '@/models/UserCollection'
-  import User from '@/models/User'
 
   /* Additional components must be handled outside of the component instance */
   @Component({
@@ -20,17 +18,12 @@
 
   export default class App extends Vue {
     /* 'data' property */
-    users:UserCollection = this.getItems;
+    // users:UserCollection = this.getItems;
 
     /* 'get' turns a standard method in to computed property */
-    get getItems() {
-      return new UserCollection([
-        new User('1', 'A'),
-        new User('2', 'B'),
-        new User('3', 'C'),
-        new User('4', 'D'),
-      ])
-    }
+    // get getItems() {
+    //   //...
+    // }
   }
 </script>
 
