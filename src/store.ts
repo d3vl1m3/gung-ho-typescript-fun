@@ -1,8 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexORM from '@vuex-orm/core';
-import Users from '@/models//Users';
-import Posts from '@/models/Posts';
+import CharacterEntity from '@/entities/CharacterEntity';
 
 Vue.use(Vuex);
 
@@ -10,8 +9,7 @@ Vue.use(Vuex);
 const database = new VuexORM.Database();
 
 // Register Models to Database.
-database.register(Users);
-database.register(Posts);
+database.register(CharacterEntity);
 
 // Create Vuex Store and register database through Vuex ORM.
 const store = new Vuex.Store({
