@@ -35,5 +35,4 @@ export default class MediaInterface {
     this.updatedAt = updatedAt;
     this.author = author;
   }
-
 }

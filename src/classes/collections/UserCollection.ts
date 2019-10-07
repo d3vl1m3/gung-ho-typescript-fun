@@ -1,9 +1,8 @@
 import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstract';
-import User from '@/classes/models/User';
 import faker from 'faker';
+import User from '@/classes/models/User';
 
 export default class UserCollection extends CollectionAbstract<User> {
-
   protected generateRandomCollection(amount: number): User[] {
     const items = [];
 
@@ -15,6 +14,5 @@ export default class UserCollection extends CollectionAbstract<User> {
     }
 
     return items;
-
   }
 }
