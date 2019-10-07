@@ -1,15 +1,22 @@
 // todo: figure out a way to abstract a static class.. (getRandomCollection)
 export default abstract class CollectionAbstract<T> {
-  protected items: T[];
+  private _items: T[];
+
+  get items(): T[] {
+    return this._items;
+  }
+
+  set items(value: T[]) {
+    this._items = value;
+  }
 
   /**
    *
    * @param {[]} items Items are applied if passed in but if a bool is parsed, this will decide
    * whether or not to trigger the generateRandomCollectionFunction
-   * @param {number} amountToGenerate the amount of random items to generate
    */
-  constructor(items: T[] = [], amountToGenerate: number = 5) {
-      this.items = items;
+  constructor(items: T[] = []) {
+      this._items = items;
   }
 
   public addItem(item: T, key: number|null = null): void {
@@ -28,9 +35,5 @@ export default abstract class CollectionAbstract<T> {
     return this.items[key] !== undefined
       ? this.items[key]
       : false;
-  }
-
-  public getItems(): T[] {
-    return this.items;
   }
 }

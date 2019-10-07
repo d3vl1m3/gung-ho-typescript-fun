@@ -3,8 +3,12 @@ import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstra
 export default abstract class CollectionSeederAbstract<T> extends CollectionAbstract<T> {
   constructor(numberToGenerate: number = 5) {
     super();
-    this.items = this.generateRandomCollection( numberToGenerate );
+    this.items = this.generateCollection( numberToGenerate );
   }
 
-  protected abstract generateRandomCollection(amount: number): T[];
+  /**
+   * Generate an array of <T>s here to be assigned to the Collection extending this class
+   * @param {number} amount If a loop is used, use this to control how many will be created
+   */
+  protected abstract generateCollection(amount: number): T[];
 }

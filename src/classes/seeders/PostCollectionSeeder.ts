@@ -4,7 +4,7 @@ import Post from '@/classes/models/Post';
 import UserEntity from '@/classes/entities/UserEntity';
 
 export default class PostCollectionSeeder extends CollectionSeederAbstract<Post> {
-  protected generateRandomCollection(amount: number): Post[] {
+  protected generateCollection(amount: number): Post[] {
     const authors = UserEntity.all();
     const items = [];
     for ( let i = 0; i < amount; i += 1) {

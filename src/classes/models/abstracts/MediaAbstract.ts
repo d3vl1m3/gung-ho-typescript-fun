@@ -1,9 +1,8 @@
 import UserEntity from '@/classes/entities/UserEntity';
 import {Item} from '@vuex-orm/core/lib/data';
+import TimestampAbstract from '@/classes/models/abstracts/TimestampAbstract';
 
-export default class MediaInterface {
-  protected _updatedAt?: Date;
-  protected _createdAt?: Date;
+export default class MediaInterface extends TimestampAbstract {
   protected _author?: Item<UserEntity>;
 
   get author(): Item<UserEntity>|undefined {
@@ -14,25 +13,8 @@ export default class MediaInterface {
     this._author = value;
   }
 
-  get createdAt(): Date|undefined {
-    return this._createdAt;
-  }
-
-  set createdAt(value: Date|undefined) {
-    this._createdAt = value;
-  }
-
-  get updatedAt(): Date|undefined {
-    return this._updatedAt;
-  }
-
-  set updatedAt(value: Date|undefined) {
-    this._updatedAt = value;
-  }
-
   constructor(createdAt?: Date, updatedAt?: Date, author?: Item<UserEntity>) {
-    this.createdAt = createdAt;
-    this.updatedAt = updatedAt;
+    super(createdAt, updatedAt);
     this.author = author;
   }
 }
