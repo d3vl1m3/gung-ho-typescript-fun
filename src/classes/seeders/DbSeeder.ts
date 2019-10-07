@@ -14,22 +14,41 @@ export default class DbSeeder {
     DbSeeder.seedPosts(20);
   }
 
-  private static seedUsers(amount: number = 5) {
+  // todo: handle then/catch correctly
+  private static seedUsers(requiredAmount: number = 5) {
     // Seed users
     UserEntity.insert({
-      data: new UserEntityFactory(DbSeeder.getRandomUserCollection(amount)).items,
+      data: new UserEntityFactory(DbSeeder.getRandomUserCollection(requiredAmount)).items,
+    }).then((ref) => {
+      console.log({
+        success: !!ref,
+        message: !!ref ? 'Successfully persisted users' : 'Failed to persist users',
+      });
+    }).catch((err) => {
+      console.log({
+        success: false,
+        message: 'Failed to persist users',
+        error: err,
+      });
     });
   }
 
-  private static seedPosts(amount: number = 5) {
-    // Users must be present in the DB for populating posts
-    if ( !UserEntity.query().first() ) {
-      DbSeeder.seedUsers(1);
-    }
-
+  // todo: handle then/catch correctly
+  private static seedPosts(requiredAmount: number = 5) {
     // Seed posts
     PostEntity.insert({
-      data: new PostEntityFactory(DbSeeder.getRandomPostCollection(amount)).items,
+      data: new PostEntityFactory(DbSeeder.getRandomPostCollection(requiredAmount)).items,
+    }).then((ref) => {
+        console.log({
+          success: !!ref,
+          message: !!ref ? 'Successfully persisted posts' : 'Failed to persist posts',
+        });
+    }).catch((err) => {
+      console.log({
+        success: false,
+        message: 'Failed to persist posts',
+        error: err,
+      });
     });
   }
 
