@@ -1,7 +1,7 @@
-import UserCollection from '@/collections/UserCollection';
-import UserEntityFactory from '@/factories/UserEntityFactory';
-import User from '@/models/User';
-import UserEntity from '@/entities/UserEntity';
+import UserCollection from '@/classes/collections/UserCollection';
+import UserEntityFactory from '@/classes/factories/UserEntityFactory';
+import User from '@/classes/models/User';
+import UserEntity from '@/classes/entities/UserEntity';
 
 export default class DbSeeder {
 
