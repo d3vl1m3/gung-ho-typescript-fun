@@ -12,7 +12,7 @@ export default abstract class EntityFactoryAbstract<T extends CollectionAbstract
   }
 
   constructor(data: T | U) {
-    this.items = this.process(data);
+    this._items = this.process(data);
   }
 
   /**

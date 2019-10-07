@@ -20,11 +20,13 @@ export default class DbSeeder {
     UserEntity.insert({
       data: new UserEntityFactory(DbSeeder.getRandomUserCollection(requiredAmount)).items,
     }).then((ref) => {
+      // tslint:disable-next-line:no-console
       console.log({
         success: !!ref,
         message: !!ref ? 'Successfully persisted users' : 'Failed to persist users',
       });
     }).catch((err) => {
+      // tslint:disable-next-line:no-console
       console.log({
         success: false,
         message: 'Failed to persist users',
@@ -39,11 +41,13 @@ export default class DbSeeder {
     PostEntity.insert({
       data: new PostEntityFactory(DbSeeder.getRandomPostCollection(requiredAmount)).items,
     }).then((ref) => {
+      // tslint:disable-next-line:no-console
         console.log({
           success: !!ref,
           message: !!ref ? 'Successfully persisted posts' : 'Failed to persist posts',
         });
     }).catch((err) => {
+      // tslint:disable-next-line:no-console
       console.log({
         success: false,
         message: 'Failed to persist posts',

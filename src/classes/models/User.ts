@@ -19,7 +19,7 @@ export default class User {
   }
 
   constructor(name: string, email: string) {
-    this.name = name;
-    this.email = email;
+    this._name = name;
+    this._email = email;
   }
 }
