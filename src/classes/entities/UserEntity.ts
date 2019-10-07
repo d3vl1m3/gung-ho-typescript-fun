@@ -1,4 +1,5 @@
 import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
+import PostEntity from '@/classes/entities/PostEntity';
 
 export default class UserEntity extends EntityAbstract {
   public static entity = 'users';
@@ -9,6 +10,7 @@ export default class UserEntity extends EntityAbstract {
       ...{
         name: this.attr(null),
         email: this.attr(null),
+        posts: this.hasMany(PostEntity, 'user_id'),
       },
     };
   }

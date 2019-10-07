@@ -1,4 +1,6 @@
 import MediaAbstract from '@/classes/models/abstracts/MediaAbstract';
+import UserEntity from '@/classes/entities/UserEntity';
+import {Item} from '@vuex-orm/core/lib/data';
 
 export default class Post extends MediaAbstract {
 
@@ -21,7 +23,7 @@ export default class Post extends MediaAbstract {
   private _title: string = '';
   private _body: string = '';
 
-  constructor(title: string, body: string, createdAt?: Date, updatedAt?: Date, author?: number) {
+  constructor(title: string, body: string, createdAt?: Date, updatedAt?: Date, author?: Item<UserEntity>) {
     super(createdAt, updatedAt, author);
     this.title = title;
     this.body = body;

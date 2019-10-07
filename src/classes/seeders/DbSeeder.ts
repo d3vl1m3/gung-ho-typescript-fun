@@ -20,6 +20,8 @@ export default class DbSeeder {
       new User('Beth' , 'Beth@here.com'),
       new User('Tara', 'Tara@here.com'),
       new User('Frank', 'Frank@here.com'),
+      new User('Harold', 'Harold@here.com'),
+      new User('Jenny', 'Jenny@here.com'),
     ]);
 
     const formatterUsers = new UserEntityFactory(characters).items;
@@ -30,12 +32,23 @@ export default class DbSeeder {
   }
 
   private static seedPosts() {
-    const posts = new PostCollection([
-      new Post('Title 1' , `<p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>. Consectetur delectus <s>distinctio</s> earum ipsum molestiae, nobis nulla ratione saepe temporibus vel.</p>`),
-      new Post('Title 2' , `<b>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi consequatur dolor eveniet facere molestias mollitia nostrum quaerat quo ratione voluptate.</b>`),
-      new Post('Title 3', `<p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>. Consectetur delectus <s>distinctio</s> earum ipsum molestiae, nobis nulla ratione saepe temporibus vel.</p>`),
-      new Post('Title 4', `<b>Ab at culpa eius, in <blockquote>inventore minima quaerat</blockquote> quisquam quos <s>recusandae sed</s>.</b>`),
-    ]);
+
+    const date = new Date(Date.now());
+    const authors = UserEntity.all();
+
+    const items = [];
+
+    for ( let i = 0; i < 20; i += 1) {
+      items.push( new Post(
+        'Title ' + i ,
+        '<p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>. Consectetur delectus <s>distinctio</s> earum ipsum molestiae, nobis nulla ratione saepe temporibus vel.</p>',
+        date,
+        date,
+        getRandomItem(authors),
+      ));
+    }
+
+    const posts = new PostCollection(items);
 
     const formatterPosts = new PostEntityFactory(posts).items;
 
@@ -43,4 +56,8 @@ export default class DbSeeder {
       data: formatterPosts,
     });
   }
+}
+
+function getRandomItem(a: any[]) {
+  return a[Math.floor(Math.random() * a.length)];
 }
