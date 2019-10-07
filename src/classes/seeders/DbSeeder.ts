@@ -7,11 +7,16 @@ import Post from '@/classes/models/Post';
 import PostEntityFactory from '@/classes/factories/PostEntityFactory';
 import PostEntity from '@/classes/entities/PostEntity';
 import faker from 'faker';
+import ErrorEntity from '@/classes/entities/ErrorEntity';
+import ErrorEntityFactory from '@/classes/factories/ErrorEntityFactory';
+import ErrorCollection from '@/classes/collections/ErrorCollection';
+import Error from '@/classes/models/Error';
 
 export default class DbSeeder {
   public static init() {
     DbSeeder.seedUsers(7);
     DbSeeder.seedPosts(20);
+    DbSeeder.seedErrors();
   }
 
   // todo: handle then/catch correctly
@@ -56,6 +61,27 @@ export default class DbSeeder {
     });
   }
 
+  // todo: handle then/catch correctly
+  private static seedErrors(requiredAmount: number = 5) {
+    // Seed users
+    ErrorEntity.insert({
+      data: new ErrorEntityFactory(DbSeeder.getRandomErrorCollection(requiredAmount)).items,
+    }).then((ref) => {
+      // tslint:disable-next-line:no-console
+      console.log({
+        success: !!ref,
+        message: !!ref ? 'Successfully persisted errors' : 'Failed to persist errors',
+      });
+    }).catch((err) => {
+      // tslint:disable-next-line:no-console
+      console.log({
+        success: false,
+        message: 'Failed to persist errors',
+        error: err,
+      });
+    });
+  }
+
   private static getRandomUserCollection(amount: number = 5): UserCollection {
     const items = [];
 
@@ -84,6 +110,20 @@ export default class DbSeeder {
     }
 
     return new PostCollection(items);
+  }
+
+  private static getRandomErrorCollection(amount: number = 5): ErrorCollection {
+    const items = [];
+
+    for ( let i = 0; i < amount; i += 1) {
+      items.push(new Error(
+        faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
+        true,
+        'ERR: ' + faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
+      ));
+    }
+
+    return new ErrorCollection(items);
   }
 }
 
