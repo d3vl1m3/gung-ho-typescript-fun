@@ -1,10 +1,7 @@
-import faker from 'faker';
 import UserCollection from '@/classes/collections/UserCollection';
 import UserEntityFactory from '@/classes/factories/UserEntityFactory';
-import User from '@/classes/models/User';
 import UserEntity from '@/classes/entities/UserEntity';
 import PostCollection from '@/classes/collections/PostCollection';
-import Post from '@/classes/models/Post';
 import PostEntityFactory from '@/classes/factories/PostEntityFactory';
 import PostEntity from '@/classes/entities/PostEntity';
 import ErrorEntity from '@/classes/entities/ErrorEntity';
@@ -14,14 +11,21 @@ import Error from '@/classes/models/Error';
 
 export default class DbSeeder {
   public static init() {
-    DbSeeder.seedUsers(7);
-    DbSeeder.seedPosts(20);
-    DbSeeder.seedErrors();
+    // Only populate an empty DB
+    if ( !UserEntity.query().count() ) {
+      DbSeeder.seedUsers(7);
+    }
+    if ( !PostEntity.query().count() ) {
+      DbSeeder.seedPosts(20);
+    }
+    if ( !ErrorEntity.query().count() ) {
+      DbSeeder.seedErrors();
+    }
   }
 
   private static seedUsers(requiredAmount: number = 5) {
     UserEntity.insert({
-      data: new UserEntityFactory(DbSeeder.getRandomUserCollection(requiredAmount)).items,
+      data: new UserEntityFactory(UserCollection.getRandomCollection(requiredAmount)).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist users'));
@@ -33,7 +37,7 @@ export default class DbSeeder {
 
   private static seedPosts(requiredAmount: number = 5) {
     PostEntity.insert({
-      data: new PostEntityFactory(DbSeeder.getRandomPostCollection(requiredAmount)).items,
+      data: new PostEntityFactory(PostCollection.getRandomCollection(requiredAmount)).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist posts'));
@@ -45,7 +49,7 @@ export default class DbSeeder {
 
   private static seedErrors(requiredAmount: number = 5) {
     ErrorEntity.insert({
-      data: new ErrorEntityFactory(DbSeeder.getRandomErrorCollection(requiredAmount)).items,
+      data: new ErrorEntityFactory(ErrorCollection.getRandomCollection(requiredAmount)).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist error'));
@@ -54,51 +58,4 @@ export default class DbSeeder {
       ErrorEntity.add(new Error('Failed to persist error', err));
     });
   }
-
-  private static getRandomUserCollection(amount: number = 5): UserCollection {
-    const items = [];
-
-    for ( let i = 0; i < amount; i += 1) {
-      items.push(new User(faker.name.findName() , faker.internet.email()));
-    }
-
-    return new UserCollection(items);
-  }
-
-  private static getRandomPostCollection(amount: number = 5): PostCollection {
-    const authors = UserEntity.all();
-    const items = [];
-
-    for ( let i = 0; i < amount; i += 1) {
-      const createdAt = faker.date.between(new Date('2018/01/01 GMT'), new Date(Date.now()));
-      const updatedAt = faker.date.between(createdAt, new Date(Date.now()));
-
-      items.push( new Post(
-        faker.lorem.words(Math.floor((Math.random() * 13) + 3)), // title
-        faker.lorem.paragraphs(5), // body
-        createdAt, // created at
-        updatedAt, // updated at
-        getRandomItem(authors),
-      ));
-    }
-
-    return new PostCollection(items);
-  }
-
-  private static getRandomErrorCollection(amount: number = 5): ErrorCollection {
-    const items = [];
-
-    for ( let i = 0; i < amount; i += 1) {
-      items.push(new Error(
-        faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
-        'ERR: ' + faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
-      ));
-    }
-
-    return new ErrorCollection(items);
-  }
-}
-
-function getRandomItem(a: any[]) {
-  return a[Math.floor(Math.random() * a.length)];
 }
