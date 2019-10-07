@@ -1,4 +1,3 @@
-import faker from 'faker';
 import UserCollection from '@/classes/collections/UserCollection';
 import UserEntityFactory from '@/classes/factories/UserEntityFactory';
 import User from '@/classes/models/User';
@@ -7,6 +6,7 @@ import PostCollection from '@/classes/collections/PostCollection';
 import Post from '@/classes/models/Post';
 import PostEntityFactory from '@/classes/factories/PostEntityFactory';
 import PostEntity from '@/classes/entities/PostEntity';
+import faker from 'faker';
 
 export default class DbSeeder {
   public static init() {
@@ -22,6 +22,11 @@ export default class DbSeeder {
   }
 
   private static seedPosts(amount: number = 5) {
+    // Users must be present in the DB for populating posts
+    if ( !UserEntity.query().first() ) {
+      DbSeeder.seedUsers(1);
+    }
+
     // Seed posts
     PostEntity.insert({
       data: new PostEntityFactory(DbSeeder.getRandomPostCollection(amount)).items,
@@ -39,11 +44,6 @@ export default class DbSeeder {
   }
 
   private static getRandomPostCollection(amount: number = 5): PostCollection {
-    // Users must be present in the DB to populate posts
-    if ( !UserEntity.query().first() ) {
-      DbSeeder.seedUsers(1);
-    }
-
     const authors = UserEntity.all();
     const items = [];
 
