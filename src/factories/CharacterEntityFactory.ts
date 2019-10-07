@@ -6,7 +6,6 @@ export default class CharacterEntityFactory extends EntityFactoryAbstract<Charac
   protected format(item: Character): object {
     return {
       name:  item.name,
-      dob:  item.dob,
       sex:  item.sex,
     };
   }

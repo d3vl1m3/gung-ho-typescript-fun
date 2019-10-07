@@ -8,7 +8,6 @@ export default class CharacterEntity extends Model {
     return {
       id: this.increment(),
       name: this.attr(null),
-      dob: this.attr(null),
       sex: this.attr(Sex.NONE),
     };
   }

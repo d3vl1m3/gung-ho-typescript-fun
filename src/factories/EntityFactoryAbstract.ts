@@ -1,21 +1,24 @@
 import CollectionAbstract from '@/models/CollectionAbstract';
 
 export default abstract class EntityFactoryAbstract<T extends CollectionAbstract<U>, U> {
+  private _items: object[] = [];
 
-  private _items!: object;
+  get items(): object[] {
+    return this._items;
+  }
+
+  set items(value: object[]) {
+    this._items = value;
+  }
 
   constructor(data: T | U) {
     this.items = this.process(data);
   }
 
-  get items(): object {
-    return this._items;
-  }
-
-  set items(value: object) {
-    this._items = value;
-  }
-
+  /**
+   * Formatting of the object must be implemented in the child classes
+   * @param item
+   */
   protected abstract format(item: U): object;
 
   private processItems(items: T): object[] {
