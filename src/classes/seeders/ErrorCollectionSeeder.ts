@@ -3,7 +3,7 @@ import faker from 'faker';
 import Error from '@/classes/models/Error';
 
 export default class ErrorCollectionSeeder extends CollectionSeederAbstract<Error> {
-  protected generateCollection(amount: number): Error[] {
+  protected generate(amount: number): Error[] {
     const items = [];
     for ( let i = 0; i < amount; i += 1) {
       items.push(new Error(
