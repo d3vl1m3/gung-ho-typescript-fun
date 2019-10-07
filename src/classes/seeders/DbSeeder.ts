@@ -9,28 +9,29 @@ import PostEntityFactory from '@/classes/factories/PostEntityFactory';
 import PostEntity from '@/classes/entities/PostEntity';
 
 export default class DbSeeder {
-
   public static init() {
-    DbSeeder.seedUsers();
-    DbSeeder.seedPosts();
+    // Seed users
+    UserEntity.insert({
+      data: new UserEntityFactory(DbSeeder.getUserCollection()).items,
+    });
+
+    // Seed posts
+    PostEntity.insert({
+      data: new PostEntityFactory(DbSeeder.getFormattedPosts()).items,
+    });
   }
 
-  private static seedUsers() {
+  private static getUserCollection(): UserCollection {
     const items = [];
 
     for ( let i = 0; i < 7; i += 1) {
       items.push(new User(faker.name.findName() , faker.internet.email()));
     }
 
-    const characters = new UserCollection(items);
-    const formatterUsers = new UserEntityFactory(characters).items;
-
-    UserEntity.insert({
-      data: formatterUsers,
-    });
+    return new UserCollection(items);
   }
 
-  private static seedPosts() {
+  private static getFormattedPosts(): PostCollection {
     const authors = UserEntity.all();
     const items = [];
 
@@ -47,12 +48,7 @@ export default class DbSeeder {
       ));
     }
 
-    const posts = new PostCollection(items);
-    const formatterPosts = new PostEntityFactory(posts).items;
-
-    PostEntity.insert({
-      data: formatterPosts,
-    });
+    return new PostCollection(items);
   }
 }
 
