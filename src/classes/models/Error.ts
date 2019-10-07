@@ -1,7 +1,7 @@
 export default class Error {
   private _message: string;
   private _success: boolean;
-  private _error: string;
+  private _error?: string;
 
   get message(): string {
     return this._message;
@@ -19,15 +19,15 @@ export default class Error {
     this._success = value;
   }
 
-  get error(): string {
+  get error(): string|undefined {
     return this._error;
   }
 
-  set error(value: string) {
+  set error(value: string|undefined) {
     this._error = value;
   }
 
-  constructor(message: string, success: boolean, error: string) {
+  constructor(message: string, success: boolean, error?: string) {
     this._message = message;
     this._success = success;
     this._error = error;
