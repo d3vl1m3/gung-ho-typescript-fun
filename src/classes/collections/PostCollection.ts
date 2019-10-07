@@ -4,7 +4,7 @@ import UserEntity from '@/classes/entities/UserEntity';
 import faker from 'faker';
 
 export default class PostCollection extends MediaCollectionAbstract<Post> {
-  public static getRandomCollection(amount: number = 5): PostCollection {
+  protected generateRandomCollection(amount: number): Post[] {
     const authors = UserEntity.all();
     const items = [];
 
@@ -21,8 +21,9 @@ export default class PostCollection extends MediaCollectionAbstract<Post> {
       ));
     }
 
-    return new PostCollection(items);
+    return items;
   }
+
 }
 
 function getRandomItem(a: any[]) {

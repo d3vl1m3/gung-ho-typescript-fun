@@ -25,7 +25,7 @@ export default class DbSeeder {
 
   private static seedUsers(requiredAmount: number = 5) {
     UserEntity.insert({
-      data: new UserEntityFactory(UserCollection.getRandomCollection(requiredAmount)).items,
+      data: new UserEntityFactory(new UserCollection(true, requiredAmount)).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist users'));
@@ -37,7 +37,7 @@ export default class DbSeeder {
 
   private static seedPosts(requiredAmount: number = 5) {
     PostEntity.insert({
-      data: new PostEntityFactory(PostCollection.getRandomCollection(requiredAmount)).items,
+      data: new PostEntityFactory(new PostCollection(true, requiredAmount)).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist posts'));
@@ -49,7 +49,7 @@ export default class DbSeeder {
 
   private static seedErrors(requiredAmount: number = 5) {
     ErrorEntity.insert({
-      data: new ErrorEntityFactory(ErrorCollection.getRandomCollection(requiredAmount)).items,
+      data: new ErrorEntityFactory(new ErrorCollection(true, requiredAmount)).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist error'));

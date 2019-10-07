@@ -3,7 +3,7 @@ import Error from '@/classes/models/Error';
 import faker from 'faker';
 
 export default class ErrorCollection extends CollectionAbstract<Error> {
-  public static getRandomCollection(amount: number = 5): ErrorCollection {
+  protected generateRandomCollection(amount: number = 5): Error[] {
     const items = [];
 
     for ( let i = 0; i < amount; i += 1) {
@@ -13,6 +13,6 @@ export default class ErrorCollection extends CollectionAbstract<Error> {
       ));
     }
 
-    return new ErrorCollection(items);
+    return items;
   }
 }
