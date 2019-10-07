@@ -21,8 +21,8 @@ export default class DbSeeder {
       new User('Tara', 'Tara@here.com'),
       new User('Frank', 'Frank@here.com'),
     ]);
+
     const formatterUsers = new UserEntityFactory(characters).items;
-    console.log(formatterUsers);
 
     UserEntity.insert({
       data: formatterUsers,
@@ -38,7 +38,6 @@ export default class DbSeeder {
     ]);
 
     const formatterPosts = new PostEntityFactory(posts).items;
-    console.log(formatterPosts);
 
     PostEntity.insert({
       data: formatterPosts,
