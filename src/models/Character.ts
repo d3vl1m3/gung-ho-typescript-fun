@@ -2,7 +2,6 @@ import {Sex} from '@/enum/Sex';
 
 export default class Character {
   private _name: string = '';
-  private _dob: Date | null = null;
   private _sex: Sex  = Sex.NONE;
 
   get name(): string {
