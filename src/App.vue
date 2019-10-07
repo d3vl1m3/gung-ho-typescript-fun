@@ -2,7 +2,7 @@ import { Sex } from '@/enum/Sex'
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <pre style="text-align: left; max-width: 700px; margin: 0 auto;">
+    <pre>
       {{ users }}
     </pre>
   </div>
@@ -29,12 +29,15 @@ import { Sex } from '@/enum/Sex'
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  pre {
+    text-align: left; max-width: 700px; margin: 0 auto;
+  }
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>
