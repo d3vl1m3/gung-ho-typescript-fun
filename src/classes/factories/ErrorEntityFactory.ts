@@ -5,8 +5,7 @@ import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAb
 export default class ErrorEntityFactory extends EntityFactoryAbstract<ErrorCollection, Error> {
   protected format(item: Error): object {
     return {
-      message:  item.message,
-      success:  item.success,
+      note:  item.note,
       error:  item.error,
     };
   }

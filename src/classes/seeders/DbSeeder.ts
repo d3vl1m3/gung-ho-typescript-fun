@@ -20,41 +20,38 @@ export default class DbSeeder {
   }
 
   private static seedUsers(requiredAmount: number = 5) {
-    // Seed users
     UserEntity.insert({
       data: new UserEntityFactory(DbSeeder.getRandomUserCollection(requiredAmount)).items,
     }).then((ref) => {
-      if ( !!ref ) {
-        ErrorEntity.add(new Error('Failed to persist users', false));
+      if ( !ref ) {
+        ErrorEntity.add(new Error('Failed to persist users'));
       }
     }).catch((err) => {
-      ErrorEntity.add(new Error('Failed to persist users', false, err));
+      ErrorEntity.add(new Error('Failed to persist users', err));
     });
   }
 
   private static seedPosts(requiredAmount: number = 5) {
-    // Seed posts
     PostEntity.insert({
       data: new PostEntityFactory(DbSeeder.getRandomPostCollection(requiredAmount)).items,
     }).then((ref) => {
-      if ( !!ref ) {
-        ErrorEntity.add(new Error('Failed to persist posts', false));
+      if ( !ref ) {
+        ErrorEntity.add(new Error('Failed to persist posts'));
       }
     }).catch((err) => {
-      ErrorEntity.add(new Error('Failed to persist posts', false, err));
+      ErrorEntity.add(new Error('Failed to persist posts', err));
     });
   }
 
   private static seedErrors(requiredAmount: number = 5) {
-    // Seed users
     ErrorEntity.insert({
       data: new ErrorEntityFactory(DbSeeder.getRandomErrorCollection(requiredAmount)).items,
     }).then((ref) => {
-      if ( !!ref ) {
-        ErrorEntity.add(new Error('Failed to persist error', false));
+      if ( !ref ) {
+        ErrorEntity.add(new Error('Failed to persist error'));
       }
     }).catch((err) => {
-      ErrorEntity.add(new Error('Failed to persist error', false, err));
+      ErrorEntity.add(new Error('Failed to persist error', err));
     });
   }
 
@@ -94,7 +91,6 @@ export default class DbSeeder {
     for ( let i = 0; i < amount; i += 1) {
       items.push(new Error(
         faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
-        true,
         'ERR: ' + faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
       ));
     }

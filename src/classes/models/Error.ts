@@ -1,24 +1,14 @@
 export default class Error {
-  private _message: string;
-  private _success: boolean;
+  private _note: string;
   private _error?: string;
 
-  get message(): string {
-    return this._message;
+  get note(): string {
+    return this._note;
   }
 
-  set message(value: string) {
-    this._message = value;
+  set note(value: string) {
+    this._note = value;
   }
-
-  get success(): boolean {
-    return this._success;
-  }
-
-  set success(value: boolean) {
-    this._success = value;
-  }
-
   get error(): string|undefined {
     return this._error;
   }
@@ -27,9 +17,8 @@ export default class Error {
     this._error = value;
   }
 
-  constructor(message: string, success: boolean, error?: string) {
-    this._message = message;
-    this._success = success;
+  constructor(message: string, error?: string) {
+    this._note = message;
     this._error = error;
   }
 }

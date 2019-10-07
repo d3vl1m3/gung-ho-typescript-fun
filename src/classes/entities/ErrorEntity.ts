@@ -9,8 +9,7 @@ export default class ErrorEntity extends EntityAbstract {
     return {
       ...super.fields(),
       ...{
-        message: this.attr(null),
-        success: this.attr(null),
+        note: this.attr(null),
         error: this.attr(null),
       },
     };
