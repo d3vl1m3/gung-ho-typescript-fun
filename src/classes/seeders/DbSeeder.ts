@@ -6,6 +6,7 @@ import PostCollection from '@/classes/collections/PostCollection';
 import Post from '@/classes/models/Post';
 import PostEntityFactory from '@/classes/factories/PostEntityFactory';
 import PostEntity from '@/classes/entities/PostEntity';
+import faker from 'faker';
 
 export default class DbSeeder {
 
@@ -15,15 +16,13 @@ export default class DbSeeder {
   }
 
   private static seedUsers() {
-    const characters = new UserCollection([
-      new User('Liam' , 'Liam@here.com'),
-      new User('Beth' , 'Beth@here.com'),
-      new User('Tara', 'Tara@here.com'),
-      new User('Frank', 'Frank@here.com'),
-      new User('Harold', 'Harold@here.com'),
-      new User('Jenny', 'Jenny@here.com'),
-    ]);
+    const items = [];
 
+    for ( let i = 0; i < 7; i += 1) {
+      items.push(new User(faker.name.findName() , faker.internet.email()));
+    }
+
+    const characters = new UserCollection(items);
     const formatterUsers = new UserEntityFactory(characters).items;
 
     UserEntity.insert({
@@ -32,24 +31,23 @@ export default class DbSeeder {
   }
 
   private static seedPosts() {
-
-    const date = new Date(Date.now());
     const authors = UserEntity.all();
-
     const items = [];
 
     for ( let i = 0; i < 20; i += 1) {
+      const createdAt = faker.date.between(new Date('2018/01/01 GMT'), new Date(Date.now()));
+      const updatedAt = faker.date.between(createdAt, new Date(Date.now()));
+
       items.push( new Post(
-        'Title ' + i ,
-        '<p>Lorem ipsum dolor sit amet, <b>consectetur adipisicing elit</b>. Consectetur delectus <s>distinctio</s> earum ipsum molestiae, nobis nulla ratione saepe temporibus vel.</p>',
-        date,
-        date,
+        faker.lorem.words(Math.floor((Math.random() * 15) + 1)), // title
+        faker.lorem.paragraphs(5), // body
+        createdAt, // created at
+        updatedAt, // updated at
         getRandomItem(authors),
       ));
     }
 
     const posts = new PostCollection(items);
-
     const formatterPosts = new PostEntityFactory(posts).items;
 
     PostEntity.insert({

@@ -7,7 +7,7 @@ export default class MediaEntityAbstract extends EntityAbstract {
     return {
       ...super.fields(),
       ...{
-        createdAt: this.increment(),
+        createdAt: this.attr(null),
         updatedAt: this.attr(null),
         user_id: this.attr(null),
         author: this.belongsTo(UserEntity, 'user_id'),
