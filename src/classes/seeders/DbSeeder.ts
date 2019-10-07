@@ -1,3 +1,4 @@
+import faker from 'faker';
 import UserCollection from '@/classes/collections/UserCollection';
 import UserEntityFactory from '@/classes/factories/UserEntityFactory';
 import User from '@/classes/models/User';
@@ -6,7 +7,6 @@ import PostCollection from '@/classes/collections/PostCollection';
 import Post from '@/classes/models/Post';
 import PostEntityFactory from '@/classes/factories/PostEntityFactory';
 import PostEntity from '@/classes/entities/PostEntity';
-import faker from 'faker';
 import ErrorEntity from '@/classes/entities/ErrorEntity';
 import ErrorEntityFactory from '@/classes/factories/ErrorEntityFactory';
 import ErrorCollection from '@/classes/collections/ErrorCollection';
