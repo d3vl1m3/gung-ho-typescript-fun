@@ -7,7 +7,7 @@ import { Sex } from '@/enum/Sex'
 
 <script lang="ts">
   import {Component, Vue} from 'vue-property-decorator';
-  import DbSeeder from '@/seeders/DbSeeder';
+  import DbSeeder from '@/classes/seeders/DbSeeder';
 
   /* Additional components must be handled outside of the component instance */
   @Component({

@@ -1,4 +1,4 @@
-import CollectionAbstract from '@/models/CollectionAbstract';
+import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstract';
 
 export default abstract class EntityFactoryAbstract<T extends CollectionAbstract<U>, U> {
   private _items: object[] = [];
