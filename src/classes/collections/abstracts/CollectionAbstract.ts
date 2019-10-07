@@ -4,14 +4,12 @@ export default abstract class CollectionAbstract<T> {
 
   /**
    *
-   * @param {[]|boolean} items Items are applied if passed in but if a bool is parsed, this will decide
+   * @param {[]} items Items are applied if passed in but if a bool is parsed, this will decide
    * whether or not to trigger the generateRandomCollectionFunction
    * @param {number} amountToGenerate the amount of random items to generate
    */
-  constructor(items: T[]|boolean = [], amountToGenerate: number = 5) {
-      this.items = items instanceof Array
-        ? items
-        : this.generateRandomCollection( items ? amountToGenerate : 0);
+  constructor(items: T[] = [], amountToGenerate: number = 5) {
+      this.items = items;
   }
 
   public addItem(item: T, key: number|null = null): void {
@@ -35,6 +33,4 @@ export default abstract class CollectionAbstract<T> {
   public getItems(): T[] {
     return this.items;
   }
-
-  protected abstract generateRandomCollection(amount: number): T[];
 }
