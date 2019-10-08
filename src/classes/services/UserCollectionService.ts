@@ -14,5 +14,4 @@ export default class UserCollection extends CollectionServiceAbstract<User> {
 
     return items;
   }
-
 }

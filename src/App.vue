@@ -1,3 +1,4 @@
+import { InputType } from '@/classes/enums/ElementAttributes'
 import { Sex } from '@/enum/Sex'
 <template>
   <div id="app">
@@ -19,18 +20,18 @@ import { Sex } from '@/enum/Sex'
 
   export default class App extends Vue {
     protected users: Array<Item<UserEntity>> = [];
-
-    public created() {
+    public mounted() {
       DbSeeder.init();
       this.users = UserEntity.query().with('posts').get();
     }
-
   }
 </script>
 
 <style lang="scss">
   pre {
-    text-align: left; max-width: 700px; margin: 0 auto;
+    max-width: 100%;
+    overflow-x: scroll;
+    text-align: left;
   }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
