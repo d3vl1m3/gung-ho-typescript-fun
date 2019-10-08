@@ -13,7 +13,7 @@ export default class MediaInterface extends TimestampAbstract {
     this._author = value;
   }
 
-  constructor(createdAt?: Date, updatedAt?: Date, author?: Item<UserEntity>) {
+  constructor(createdAt: Date, updatedAt: Date, author?: Item<UserEntity>) {
     super(createdAt, updatedAt);
     this.author = author;
   }

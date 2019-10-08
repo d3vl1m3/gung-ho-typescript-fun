@@ -15,7 +15,7 @@ export default class Post extends MediaAbstract {
     return this._body;
   }
 
-  constructor(title: string, body: string, createdAt?: Date, updatedAt?: Date, author?: Item<UserEntity>) {
+  constructor(title: string, body: string, createdAt: Date, updatedAt: Date, author?: Item<UserEntity>) {
     super(createdAt, updatedAt, author);
     this._title = title;
     this._body = body;
