@@ -1,9 +1,9 @@
-import CollectionSeederAbstract from '@/classes/seeders/abstracts/CollectionSeederAbstract';
+import CollectionServiceAbstract from '@/classes/services/abstracts/CollectionServiceAbstract';
 import faker from 'faker';
 import Post from '@/classes/models/Post';
 import UserEntity from '@/classes/entities/UserEntity';
 
-export default class PostCollectionSeeder extends CollectionSeederAbstract<Post> {
+export default class PostCollection extends CollectionServiceAbstract<Post> {
   protected generate(amount: number): Post[] {
     const authors = UserEntity.all();
     const items = [];
