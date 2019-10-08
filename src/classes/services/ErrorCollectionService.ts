@@ -1,6 +1,6 @@
 import CollectionServiceAbstract from '@/classes/services/abstracts/CollectionServiceAbstract';
-import faker from 'faker';
 import Error from '@/classes/models/Error';
+import faker from 'faker';
 
 export default class ErrorCollectionService extends CollectionServiceAbstract<Error> {
   protected generate(amount: number): Error[] {

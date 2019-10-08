@@ -1,15 +1,15 @@
-import UserEntityFactory from '@/classes/factories/UserEntityFactory';
-import UserEntity from '@/classes/entities/UserEntity';
-import UserCollectionService from '@/classes/services/UserCollectionService';
-
-import PostEntityFactory from '@/classes/factories/PostEntityFactory';
-import PostEntity from '@/classes/entities/PostEntity';
-import PostCollectionService from '@/classes/services/PostCollectionService';
-
 import Error from '@/classes/models/Error';
-import ErrorEntityFactory from '@/classes/factories/ErrorEntityFactory';
-import ErrorEntity from '@/classes/entities/ErrorEntity';
 import ErrorCollectionService from '@/classes/services/ErrorCollectionService';
+import ErrorEntity from '@/classes/entities/ErrorEntity';
+import ErrorEntityFactory from '@/classes/factories/ErrorEntityFactory';
+
+import PostCollectionService from '@/classes/services/PostCollectionService';
+import PostEntity from '@/classes/entities/PostEntity';
+import PostEntityFactory from '@/classes/factories/PostEntityFactory';
+
+import UserCollectionService from '@/classes/services/UserCollectionService';
+import UserEntity from '@/classes/entities/UserEntity';
+import UserEntityFactory from '@/classes/factories/UserEntityFactory';
 
 export default class DbSeeder {
   public static init() {

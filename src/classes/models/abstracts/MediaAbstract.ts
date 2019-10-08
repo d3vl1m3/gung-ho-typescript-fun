@@ -1,6 +1,6 @@
-import UserEntity from '@/classes/entities/UserEntity';
 import {Item} from '@vuex-orm/core/lib/data';
 import TimestampAbstract from '@/classes/models/abstracts/TimestampAbstract';
+import UserEntity from '@/classes/entities/UserEntity';
 
 export default class MediaInterface extends TimestampAbstract {
   protected _author?: Item<UserEntity>;

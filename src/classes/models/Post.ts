@@ -1,6 +1,6 @@
+import {Item} from '@vuex-orm/core/lib/data';
 import MediaAbstract from '@/classes/models/abstracts/MediaAbstract';
 import UserEntity from '@/classes/entities/UserEntity';
-import {Item} from '@vuex-orm/core/lib/data';
 
 export default class Post extends MediaAbstract {
 

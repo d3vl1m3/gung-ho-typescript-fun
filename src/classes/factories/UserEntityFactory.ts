@@ -1,6 +1,6 @@
+import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAbstract';
 import User from '@/classes/models/User';
 import UserCollection from '@/classes/collections/UserCollection';
-import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAbstract';
 
 export default class UserEntityFactory extends EntityFactoryAbstract<UserCollection, User> {
   protected format(item: User): object {

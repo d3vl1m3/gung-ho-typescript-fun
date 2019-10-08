@@ -1,6 +1,6 @@
 import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAbstract';
-import MediaCollectionAbstract from '@/classes/collections/abstracts/MediaCollectionAbstract';
 import MediaAbstract from '@/classes/models/abstracts/MediaAbstract';
+import MediaCollectionAbstract from '@/classes/collections/abstracts/MediaCollectionAbstract';
 
 export default class MediaEntityFactoryAbstract <T extends MediaCollectionAbstract<U>, U extends MediaAbstract >
   extends EntityFactoryAbstract<T, U> {
