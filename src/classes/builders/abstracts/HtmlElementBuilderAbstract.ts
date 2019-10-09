@@ -8,7 +8,17 @@ export default abstract class HtmlElementBuilderAbstract <U extends HTMLElement>
   }
 
   public id(id: string): this {
-    this._element.setAttribute('id', id);
+    this._element.id = id;
+    return this;
+  }
+
+  public data(label: string, value: string): this {
+    this._element.setAttribute('data' + label, value);
+    return this;
+  }
+
+  public append(elem: HTMLElement): this {
+    this._element.append(elem);
     return this;
   }
 
