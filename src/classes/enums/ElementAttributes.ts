@@ -1,3 +1,14 @@
+export enum FormMethodType {
+  GET = 'GET',
+  POST = 'POST',
+}
+
+export enum ButtonTypes {
+  BUTTON = 'button',
+  SUBMIT = 'submit',
+  RESET = 'reset',
+}
+
 export enum InputType {
   BUTTON = 'button',
   CHECKBOX = 'checkbox',
@@ -21,9 +32,4 @@ export enum InputType {
   TIME = 'time',
   URL = 'url',
   WEEK = 'week',
-}
-
-export enum MethodType {
-  GET = 'GET',
-  POST = 'POST',
 }

@@ -1,5 +1,5 @@
 import HtmlElementBuilderAbstract from '@/classes/builders/abstracts/HtmlElementBuilderAbstract';
-import {MethodType} from '@/classes/enums/ElementAttributes';
+import {FormMethodType} from '@/classes/enums/ElementAttributes';
 
 export default class FormBuilder extends HtmlElementBuilderAbstract<HTMLFormElement> {
   protected readonly _element: HTMLFormElement;
@@ -9,7 +9,7 @@ export default class FormBuilder extends HtmlElementBuilderAbstract<HTMLFormElem
     this._element =  document.createElement('form');
   }
 
-  public method(method: MethodType): this {
+  public method(method: FormMethodType): this {
     this._element.method = method;
     return this;
   }
