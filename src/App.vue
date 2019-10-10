@@ -15,9 +15,7 @@ import { Sex } from '@/enum/Sex'
 import {Component, Vue} from 'vue-property-decorator';
 import UserEntity from '@/classes/entities/UserEntity';
 import {Item} from '@vuex-orm/core/lib/data';
-import InputBuilder from '@/classes/builders/InputBuilder';
-import {InputType} from '@/classes/enums/ElementAttributes';
-import LabelBuilder from '@/classes/builders/LabelBuilder'
+import {MyApp} from '@/classes/test';
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
@@ -26,20 +24,7 @@ export default class App extends Vue {
   protected users: Array<Item<UserEntity>> = [];
   public mounted() {
 
-    const label = new LabelBuilder()
-      .text('a button')
-      .for('target');
-
-    const radioButton = new InputBuilder()
-      .type(InputType.CHECKBOX)
-      .value('this')
-      .id('target')
-      .name('target_2');
-
-    this.$refs.elems.append(
-      label.generate(),
-      radioButton.generate()
-    );
+    new MyApp().manageDuck();
     // DbSeeder.init();
     // this.users = UserEntity.query().with('posts').get();
   }
