@@ -1,7 +1,7 @@
 export default class Talker {
     public hasTalked: boolean = false;
 
-    // default value which will be overriden in constructor
+    // default value which will be overridden in constructor
     protected sound: string = '';
 
     // constructor can take a config object

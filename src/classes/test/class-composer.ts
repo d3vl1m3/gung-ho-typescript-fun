@@ -27,7 +27,7 @@ export function extend(target: any = {}, source: any = []): void {
 export function compose(defaultOptions: any, mixins: any[]) {
 
     // our constructor function that will be called every time a new composed object is created
-    const tor = (options: any) => {
+    const tor = function(options: any) {
             const o = {};
             // clone options given to the constructor
             if (options) {
@@ -40,6 +40,7 @@ export function compose(defaultOptions: any, mixins: any[]) {
 
             // call the constructor function of all the mixins
             mixins.forEach((mixin) => {
+              // @ts-ignore
               mixin.call(this, o);
             });
         };
