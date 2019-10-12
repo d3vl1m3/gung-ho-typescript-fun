@@ -13,6 +13,7 @@ import {Component, Vue} from 'vue-property-decorator';
 import {Item} from '@vuex-orm/core/lib/data';
 import DbSeeder from '@/classes/seeders/DbSeeder';
 import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
+import User from '@/classes/models/User'
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
@@ -21,6 +22,7 @@ export default class App extends Vue {
   protected items: Array<Item<EntityAbstract>> = [];
   public mounted() {
     DbSeeder.init();
+    new User({})
   }
 }
 </script>
