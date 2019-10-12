@@ -1,4 +1,5 @@
 import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstract';
-import MediaAbstract from '@/classes/models/abstracts/MediaAbstract';
+import MediaMixin from '@/classes/models/mixins/MediaMixin';
 
-export default class MediaCollectionAbstract<T extends MediaAbstract> extends CollectionAbstract<T> {}
+// @ts-ignore
+export default class MediaCollectionAbstract<T extends MediaMixin> extends CollectionAbstract<T> {}

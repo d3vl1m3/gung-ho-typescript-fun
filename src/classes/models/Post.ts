@@ -1,8 +1,7 @@
-import {Item} from '@vuex-orm/core/lib/data';
-import MediaAbstract from '@/classes/models/abstracts/MediaAbstract';
-import UserEntity from '@/classes/entities/UserEntity';
+import PostInterface from '@/classes/models/interfaces/PostInterface';
+import MediaMixin from '@/classes/models/mixins/MediaMixin';
 
-export default class Post extends MediaAbstract {
+export default class Post extends MediaMixin {
 
   private readonly _title: string = '';
   private readonly _body: string = '';
@@ -15,10 +14,14 @@ export default class Post extends MediaAbstract {
     return this._body;
   }
 
-  constructor(title: string, body: string, createdAt: Date, updatedAt: Date, author?: Item<UserEntity>) {
-    super(createdAt, updatedAt, author);
-    this._title = title;
-    this._body = body;
+  constructor(options: PostInterface) {
+    super({
+      createdAt: options.createdAt,
+      updatedAt: options.updatedAt,
+      author: options.author,
+    });
+    this._title = options.title;
+    this._body = options.body;
   }
 
 }
