@@ -4,6 +4,7 @@ import VuexORM from '@vuex-orm/core';
 import UserEntity from '@/classes/entities/UserEntity';
 import PostEntity from '@/classes/entities/PostEntity';
 import ErrorEntity from '@/classes/entities/ErrorEntity';
+import ImageEntity from '@/classes/entities/ImageEntity';
 
 Vue.use(Vuex);
 
@@ -14,6 +15,7 @@ const models = [
   UserEntity,
   PostEntity,
   ErrorEntity,
+  ImageEntity,
 ];
 
 // Register Models to Database.

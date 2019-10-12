@@ -1,8 +1,9 @@
 import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAbstract';
-import MediaAbstract from '@/classes/models/abstracts/MediaAbstract';
 import MediaCollectionAbstract from '@/classes/collections/abstracts/MediaCollectionAbstract';
 
-export default class MediaEntityFactoryAbstract <T extends MediaCollectionAbstract<U>, U extends MediaAbstract >
+
+// @ts-ignore
+export default class MediaEntityFactoryAbstract <T extends MediaCollectionAbstract<U>, U extends MediaMixin >
   extends EntityFactoryAbstract<T, U> {
   protected format(item: U): object {
     return {

@@ -9,7 +9,6 @@ export default class TimeStampEntityAbstract extends EntityAbstract {
       ...{
         createdAt: this.attr(null),
         updatedAt: this.attr(null),
-        author: this.belongsTo(UserEntity, 'user_id'),
       },
     };
   }
