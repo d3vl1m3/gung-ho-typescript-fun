@@ -3,6 +3,10 @@ import ErrorCollectionService from '@/classes/services/ErrorCollectionService';
 import ErrorEntity from '@/classes/entities/ErrorEntity';
 import ErrorEntityFactory from '@/classes/factories/ErrorEntityFactory';
 
+import ImageCollectionService from '@/classes/services/ImageCollectionService';
+import ImageEntity from '@/classes/entities/ImageEntity';
+import ImageEntityFactory from '@/classes/factories/ImageEntityFactory';
+
 import PostCollectionService from '@/classes/services/PostCollectionService';
 import PostEntity from '@/classes/entities/PostEntity';
 import PostEntityFactory from '@/classes/factories/PostEntityFactory';
@@ -20,14 +24,18 @@ export default class DbSeeder {
     if ( !PostEntity.query().count() ) {
       DbSeeder.seedPosts(20);
     }
+    if ( !ImageEntity.query().count() ) {
+      DbSeeder.seedImages(7);
+    }
     if ( !ErrorEntity.query().count() ) {
       DbSeeder.seedErrors();
     }
   }
 
   private static seedUsers(requiredAmount: number = 5) {
+    const userCollection = new UserCollectionService(requiredAmount);
     UserEntity.insert({
-      data: new UserEntityFactory(new UserCollectionService(requiredAmount)).items,
+      data: new UserEntityFactory(userCollection).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist users'));
@@ -38,14 +46,28 @@ export default class DbSeeder {
   }
 
   private static seedPosts(requiredAmount: number = 5) {
+    const postCollection = new PostCollectionService(requiredAmount);
     PostEntity.insert({
-      data: new PostEntityFactory(new PostCollectionService(requiredAmount)).items,
+      data: new PostEntityFactory(postCollection).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error('Failed to persist posts'));
       }
     }).catch((err) => {
       ErrorEntity.add(new Error('Failed to persist posts', err));
+    });
+  }
+
+  private static seedImages(requiredAmount: number = 5) {
+    const imageCollection = new ImageCollectionService(requiredAmount);
+    ImageEntity.insert({
+      data: new ImageEntityFactory(imageCollection).items,
+    }).then((ref) => {
+      if ( !ref ) {
+        ErrorEntity.add(new Error('Failed to persist images'));
+      }
+    }).catch((err) => {
+      ErrorEntity.add(new Error('Failed to persist images', err));
     });
   }
 
