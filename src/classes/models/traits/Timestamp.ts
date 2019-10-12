@@ -1,4 +1,4 @@
-import TimestampPropsInterface from '@/classes/models/interfaces/fractals/TimestampPropsInterface';
+import TimestampPropsInterface from '@/classes/models/interfaces/TimestampPropsInterface';
 
 export default class Timestamp {
   private readonly _updatedAt: Date;
