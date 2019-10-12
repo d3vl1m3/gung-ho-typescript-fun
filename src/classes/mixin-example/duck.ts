@@ -8,7 +8,7 @@ import {compose} from '@/classes/utility/applyMixin';
 interface IDuck extends Swimmer, Walker, Talker {
     // constructor signature the typescript way
     // tslint:disable-next-line:no-misused-new
-    new(options?: DuckConstructorOptions): Talker;
+    new(options?: DuckConstructorOptions): IDuck;
     (options?: DuckConstructorOptions): void;
 }
 
