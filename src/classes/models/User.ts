@@ -1,11 +1,11 @@
 import {Item} from '@vuex-orm/core/lib/data';
-import UserEntity from '@/classes/entities/UserEntity';
-import UserInterface from '@/classes/models/interfaces/UserInterface';
+import UserPropsInterface from '@/classes/models/interfaces/UserPropsInterface';
+import PostEntity from '@/classes/entities/PostEntity';
 
-export default class User implements UserInterface {
+export default class User {
   private readonly _email: string = '';
   private readonly _name: string = '';
-  private readonly _posts: Array<Item<UserEntity>> = [];
+  private readonly _posts: Array<Item<PostEntity>>|null = [];
 
   get email(): string {
     return this._email;
@@ -15,14 +15,14 @@ export default class User implements UserInterface {
     return this._name;
   }
 
-  get posts(): Array<Item<UserEntity>> {
+  get posts(): Array<Item<PostEntity>> | null {
     return this._posts;
   }
 
-  constructor(options: UserInterface) {
+  constructor(options: UserPropsInterface) {
     this._email = options.email;
     this._name = options.name;
-    this._posts = options.posts;
+    this._posts = options.posts ? options.posts  : null;
   }
 
 }

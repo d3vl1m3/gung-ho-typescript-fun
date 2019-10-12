@@ -6,10 +6,10 @@ export default class ErrorCollectionService extends CollectionServiceAbstract<Er
   protected generate(amount: number): Error[] {
     const items = [];
     for ( let i = 0; i < amount; i += 1) {
-      items.push(new Error(
-        faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
-        'ERR: ' + faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
-      ));
+      items.push(new Error({
+        note: faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
+        error: 'ERR: ' + faker.lorem.words(Math.floor((Math.random() * 13) + 3)),
+      }));
     }
 
     return items;

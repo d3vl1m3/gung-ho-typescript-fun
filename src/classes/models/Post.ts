@@ -1,8 +1,7 @@
-import PostInterface from '@/classes/models/interfaces/PostInterface';
 import MediaMixin from '@/classes/models/mixins/MediaMixin';
+import PostPropsInterface from '@/classes/models/interfaces/PostPropsInterface';
 
 export default class Post extends MediaMixin {
-
   private readonly _title: string = '';
   private readonly _body: string = '';
 
@@ -14,12 +13,8 @@ export default class Post extends MediaMixin {
     return this._body;
   }
 
-  constructor(options: PostInterface) {
-    super({
-      createdAt: options.createdAt,
-      updatedAt: options.updatedAt,
-      author: options.author,
-    });
+  constructor(options: PostPropsInterface) {
+    super(options);
     this._title = options.title;
     this._body = options.body;
   }

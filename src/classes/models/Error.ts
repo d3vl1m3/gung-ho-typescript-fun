@@ -1,3 +1,5 @@
+import ErrorPropsInterface from '@/classes/models/interfaces/ErrorPropsInterface';
+
 export default class Error {
   private readonly _note: string;
   private readonly _error?: string;
@@ -10,8 +12,8 @@ export default class Error {
     return this._error;
   }
 
-  constructor(message: string, error?: string) {
-    this._note = message;
-    this._error = error;
+  constructor(options: ErrorPropsInterface) {
+    this._note = options.note;
+    this._error = options.error;
   }
 }

@@ -1,4 +1,4 @@
-import MediaCollectionAbstract from '@/classes/collections/abstracts/MediaCollectionAbstract';
+import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstract';
 import Post from '@/classes/models/Post';
 
-export default class PostCollection extends MediaCollectionAbstract<Post> {}
+export default class PostCollection extends CollectionAbstract<Post> {}

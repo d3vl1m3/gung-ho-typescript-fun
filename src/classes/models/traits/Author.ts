@@ -1,11 +1,11 @@
-import {AuthorInterface} from '@/classes/models/interfaces/AuthorInterface';
 import Item from '@vuex-orm/core/lib/data/Item';
 import UserEntity from '@/classes/entities/UserEntity';
+import AuthorPropsInterface from '@/classes/models/interfaces/fractals/AuthorPropsInterface';
 
 export default class Author {
   private readonly _author: Item<UserEntity>;
 
-  constructor(options: AuthorInterface) {
+  constructor(options: AuthorPropsInterface) {
     this._author = options.author;
   }
 

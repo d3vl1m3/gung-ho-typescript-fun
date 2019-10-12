@@ -1,4 +1,3 @@
-// todo: figure out a way to abstract a static class.. (getRandomCollection)
 export default abstract class CollectionAbstract<T> {
   private _items: T[];
 

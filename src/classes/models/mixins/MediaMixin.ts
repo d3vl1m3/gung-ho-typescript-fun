@@ -1,15 +1,15 @@
 // todo: convert this to a mixin
-import Author from '@/classes/models/abstracts/Author';
+import Author from '@/classes/models/traits/Author';
 import {compose} from '@/classes/utility/applyMixin';
-import Timestamp from '@/classes/models/abstracts/Timestamp';
-import MediaInterface from '@/classes/models/interfaces/MediaInterface';
+import Timestamp from '@/classes/models/traits/Timestamp';
+import MediaPropsInterface from '@/classes/models/interfaces/fractals/MediaPropsInterface';
 
 // Create a standard interface pulling in a group of other classes to use as interfaces
-interface MediaMixin extends Timestamp {
+interface MediaMixin extends Timestamp, Author {
   // constructor signature the typescript way
   // tslint:disable-next-line:no-misused-new
-  new(options?: MediaInterface): MediaMixin;
-  (options?: MediaInterface): void;
+  new(options?: MediaPropsInterface): MediaMixin;
+  (options?: MediaMixin): void;
 }
 
 

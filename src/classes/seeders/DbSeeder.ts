@@ -38,10 +38,10 @@ export default class DbSeeder {
       data: new UserEntityFactory(userCollection).items,
     }).then((ref) => {
       if ( !ref ) {
-        ErrorEntity.add(new Error('Failed to persist users'));
+        ErrorEntity.add(new Error({note: 'Failed to persist users'}));
       }
-    }).catch((err) => {
-      ErrorEntity.add(new Error('Failed to persist users', err));
+    }).catch((error) => {
+      ErrorEntity.add(new Error({note: 'Failed to persist users', error}));
     });
   }
 
@@ -51,10 +51,10 @@ export default class DbSeeder {
       data: new PostEntityFactory(postCollection).items,
     }).then((ref) => {
       if ( !ref ) {
-        ErrorEntity.add(new Error('Failed to persist posts'));
+        ErrorEntity.add(new Error({note: 'Failed to persist posts'}));
       }
-    }).catch((err) => {
-      ErrorEntity.add(new Error('Failed to persist posts', err));
+    }).catch((error) => {
+      ErrorEntity.add(new Error({note: 'Failed to persist posts', error}));
     });
   }
 
@@ -64,10 +64,10 @@ export default class DbSeeder {
       data: new ImageEntityFactory(imageCollection).items,
     }).then((ref) => {
       if ( !ref ) {
-        ErrorEntity.add(new Error('Failed to persist images'));
+        ErrorEntity.add(new Error({note: 'Failed to persist images'}));
       }
-    }).catch((err) => {
-      ErrorEntity.add(new Error('Failed to persist images', err));
+    }).catch((error) => {
+      ErrorEntity.add(new Error({note: 'Failed to persist images', error}));
     });
   }
 
@@ -76,10 +76,10 @@ export default class DbSeeder {
       data: new ErrorEntityFactory(new ErrorCollectionService(requiredAmount)).items,
     }).then((ref) => {
       if ( !ref ) {
-        ErrorEntity.add(new Error('Failed to persist error'));
+        ErrorEntity.add(new Error({note: 'Failed to persist error'}));
       }
-    }).catch((err) => {
-      ErrorEntity.add(new Error('Failed to persist error', err));
+    }).catch((error) => {
+      ErrorEntity.add(new Error({note: 'Failed to persist error', error}));
     });
   }
 }

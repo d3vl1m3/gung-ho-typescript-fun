@@ -1,5 +1,5 @@
 import MediaMixin from '@/classes/models/mixins/MediaMixin';
-import ImageInterface from '@/classes/models/interfaces/ImageInterface';
+import ImagePropsInterface from '@/classes/models/interfaces/ImagePropsInterface';
 
 export default class Image extends MediaMixin {
   private readonly _name: string = '';
@@ -13,12 +13,8 @@ export default class Image extends MediaMixin {
     return this._href;
   }
 
-  constructor(options: ImageInterface) {
-    super({
-      createdAt: options.createdAt,
-      updatedAt: options.updatedAt,
-      author: options.author,
-    });
+  constructor(options: ImagePropsInterface) {
+    super(options);
     this._name = options.name;
     this._href = options.href;
   }
