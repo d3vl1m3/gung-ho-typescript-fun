@@ -29,6 +29,7 @@ export default class Duck extends iDuck {
     public hasQuacked = false;
     constructor(options: DuckConstructorOptions) {
         super(options);
+        this.sound = 'quack';
     }
 
     public quack() {
@@ -44,5 +45,5 @@ export default class Duck extends iDuck {
 
 // just for semantics but should contain all the relevant properties required by the extended mixins
 interface DuckConstructorOptions {
-  sound: string;
+  sound?: string;
 }

@@ -3,32 +3,26 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <div ref="elems"></div>
     <pre>
-      {{ users }}
+      {{ items }}
     </pre>
   </div>
 </template>
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import UserEntity from '@/classes/entities/UserEntity';
 import {Item} from '@vuex-orm/core/lib/data';
-import Duck from '@/classes/mixin-example/duck'
-import DbSeeder from '@/classes/seeders/DbSeeder'
+import DbSeeder from '@/classes/seeders/DbSeeder';
+import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract'
+import ImageEntity from '@/classes/entities/ImageEntity'
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
 
 export default class App extends Vue {
-  protected users: Array<Item<UserEntity>> = [];
+  protected items: Array<Item<EntityAbstract>> = [];
   public mounted() {
-    // example of a mixin/trait infused class in action
-    const duck  = new Duck({sound: 'puiock'});
-    console.log(duck.hasQuacked);
-    console.log(duck.talk());
-    console.log(duck.hasQuacked);
-
     DbSeeder.init();
-    this.users = UserEntity.query().with('posts').get();
+    this.items = ImageEntity.query().get();
   }
 }
 </script>
