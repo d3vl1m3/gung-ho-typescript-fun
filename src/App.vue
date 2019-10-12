@@ -15,7 +15,8 @@ import { Sex } from '@/enum/Sex'
 import {Component, Vue} from 'vue-property-decorator';
 import UserEntity from '@/classes/entities/UserEntity';
 import {Item} from '@vuex-orm/core/lib/data';
-import {MyApp} from '@/classes/test';
+import Duck from '@/classes/mixin-example/duck'
+import DbSeeder from '@/classes/seeders/DbSeeder'
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
@@ -23,10 +24,14 @@ import {MyApp} from '@/classes/test';
 export default class App extends Vue {
   protected users: Array<Item<UserEntity>> = [];
   public mounted() {
+    // example of a mixin/trait infused class in action
+    const duck  = new Duck({sound: 'puiock'});
+    console.log(duck.hasQuacked);
+    console.log(duck.talk());
+    console.log(duck.hasQuacked);
 
-    new MyApp().manageDuck();
-    // DbSeeder.init();
-    // this.users = UserEntity.query().with('posts').get();
+    DbSeeder.init();
+    this.users = UserEntity.query().with('posts').get();
   }
 }
 </script>
