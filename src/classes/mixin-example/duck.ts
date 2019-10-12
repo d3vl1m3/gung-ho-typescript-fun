@@ -42,7 +42,7 @@ export default class Duck extends iDuck {
     }
 }
 
-// just for semantics
+// just for semantics but should contain all the relevant properties required by the extended mixins
 interface DuckConstructorOptions {
   sound: string;
 }
