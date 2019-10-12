@@ -1,6 +1,3 @@
-import { InputType } from '@/classes/enums/ElementAttributes'
-import { InputType } from '@/classes/enums/ElementAttributes'
-import { Sex } from '@/enum/Sex'
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
