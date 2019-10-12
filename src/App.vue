@@ -12,8 +12,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import {Item} from '@vuex-orm/core/lib/data';
 import DbSeeder from '@/classes/seeders/DbSeeder';
-import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract'
-import ImageEntity from '@/classes/entities/ImageEntity'
+import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
@@ -22,7 +21,6 @@ export default class App extends Vue {
   protected items: Array<Item<EntityAbstract>> = [];
   public mounted() {
     DbSeeder.init();
-    this.items = ImageEntity.query().get();
   }
 }
 </script>
