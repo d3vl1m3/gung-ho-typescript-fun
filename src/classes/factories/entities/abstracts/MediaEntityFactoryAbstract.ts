@@ -1,5 +1,5 @@
 import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstract';
-import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAbstract';
+import EntityFactoryAbstract from '@/classes/factories/entities/abstracts/EntityFactoryAbstract';
 import MediaMixin from '@/classes/models/mixins/MediaMixin';
 
 

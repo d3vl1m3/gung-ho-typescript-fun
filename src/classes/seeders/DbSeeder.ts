@@ -1,19 +1,19 @@
 import Error from '@/classes/models/Error';
 import ErrorCollectionService from '@/classes/services/ErrorCollectionService';
 import ErrorEntity from '@/classes/entities/ErrorEntity';
-import ErrorEntityFactory from '@/classes/factories/ErrorEntityFactory';
+import ErrorEntityFactory from '@/classes/factories/entities/ErrorEntityFactory';
 
 import ImageCollectionService from '@/classes/services/ImageCollectionService';
 import ImageEntity from '@/classes/entities/ImageEntity';
-import ImageEntityFactory from '@/classes/factories/ImageEntityFactory';
+import ImageEntityFactory from '@/classes/factories/entities/ImageEntityFactory';
 
 import PostCollectionService from '@/classes/services/PostCollectionService';
 import PostEntity from '@/classes/entities/PostEntity';
-import PostEntityFactory from '@/classes/factories/PostEntityFactory';
+import PostEntityFactory from '@/classes/factories/entities/PostEntityFactory';
 
 import UserCollectionService from '@/classes/services/UserCollectionService';
 import UserEntity from '@/classes/entities/UserEntity';
-import UserEntityFactory from '@/classes/factories/UserEntityFactory';
+import UserEntityFactory from '@/classes/factories/entities/UserEntityFactory';
 
 export default class DbSeeder {
   public static init() {

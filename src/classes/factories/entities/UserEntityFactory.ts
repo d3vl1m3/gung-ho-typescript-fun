@@ -1,4 +1,4 @@
-import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAbstract';
+import EntityFactoryAbstract from '@/classes/factories/entities/abstracts/EntityFactoryAbstract';
 import User from '@/classes/models/User';
 import UserCollection from '@/classes/collections/UserCollection';
 
