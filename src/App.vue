@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <div ref="elems"></div>
     <pre>
       {{ items }}
     </pre>
@@ -10,7 +9,7 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import DbSeeder from '@/classes/seeders/DbSeeder'
+import DbSeeder from '@/classes/seeders/DbSeeder';
 import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
 import {Item} from '@vuex-orm/core/lib/data';
 
