@@ -1,4 +1,3 @@
-// todo: change this to a builder class.
 import Error from '@/classes/models/Error';
 import ErrorCollectionService from '@/classes/services/ErrorCollectionService';
 import ErrorEntity from '@/classes/entities/ErrorEntity';
