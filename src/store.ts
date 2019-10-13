@@ -1,10 +1,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import VuexORM from '@vuex-orm/core';
-import UserEntity from '@/classes/entities/UserEntity';
-import PostEntity from '@/classes/entities/PostEntity';
+
 import ErrorEntity from '@/classes/entities/ErrorEntity';
 import ImageEntity from '@/classes/entities/ImageEntity';
+import PostEntity from '@/classes/entities/PostEntity';
+import UserEntity from '@/classes/entities/UserEntity';
 
 Vue.use(Vuex);
 
@@ -12,10 +13,10 @@ Vue.use(Vuex);
 const database = new VuexORM.Database();
 
 const models = [
-  UserEntity,
-  PostEntity,
   ErrorEntity,
   ImageEntity,
+  PostEntity,
+  UserEntity,
 ];
 
 // Register Models to Database.

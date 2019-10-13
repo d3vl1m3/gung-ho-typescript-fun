@@ -1,7 +1,7 @@
 import CollectionServiceAbstract from '@/classes/services/abstracts/CollectionServiceAbstract';
 import faker from 'faker';
-import UserEntity from '@/classes/entities/UserEntity';
 import Image from '@/classes/models/Image';
+import UserEntity from '@/classes/entities/UserEntity';
 
 export default class ImageCollectionService extends CollectionServiceAbstract<Image> {
   protected generate(amount: number): Image[] {

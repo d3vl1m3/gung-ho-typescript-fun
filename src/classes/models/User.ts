@@ -1,6 +1,6 @@
 import {Item} from '@vuex-orm/core/lib/data';
-import UserPropsInterface from '@/classes/models/interfaces/UserPropsInterface';
 import PostEntity from '@/classes/entities/PostEntity';
+import UserPropsInterface from '@/classes/models/interfaces/UserPropsInterface';
 
 export default class User {
   private readonly _email: string = '';

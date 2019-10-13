@@ -1,4 +1,4 @@
-import TimestampPropsInterface from '@/classes/models/interfaces/TimestampPropsInterface';
 import AuthorPropsInterface from '@/classes/models/interfaces/AuthorPropsInterface';
+import TimestampPropsInterface from '@/classes/models/interfaces/TimestampPropsInterface';
 
-export default interface MediaPropsInterface extends TimestampPropsInterface, AuthorPropsInterface {}
+export default interface MediaPropsInterface extends AuthorPropsInterface, TimestampPropsInterface {}

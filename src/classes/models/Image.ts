@@ -1,5 +1,5 @@
-import MediaMixin from '@/classes/models/mixins/MediaMixin';
 import ImagePropsInterface from '@/classes/models/interfaces/ImagePropsInterface';
+import MediaMixin from '@/classes/models/mixins/MediaMixin';
 
 export default class Image extends MediaMixin {
   private readonly _name: string = '';

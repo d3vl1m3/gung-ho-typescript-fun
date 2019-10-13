@@ -1,6 +1,6 @@
+import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstract';
 import EntityFactoryAbstract from '@/classes/factories/abstracts/EntityFactoryAbstract';
 import MediaMixin from '@/classes/models/mixins/MediaMixin';
-import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstract';
 
 
 // @ts-ignore
