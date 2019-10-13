@@ -36,6 +36,7 @@ import UserEntity from '@/classes/entities/UserEntity';
 import Post from '@/classes/models/Post';
 import FormDataPostModelPropsFactory from '@/classes/factories/models/FormDataPostModelPropsFactory';
 import PostEntity from '@/classes/entities/PostEntity';
+import PostEntityFactory from '@/classes/factories/entities/PostEntityFactory'
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
@@ -56,11 +57,10 @@ export default class App extends Vue {
 
     const postProps = new FormDataPostModelPropsFactory({form}).props;
 
-    console.log(postProps);
-
     if ( postProps ) {
       const post = new Post(postProps);
-      PostEntity.insert({data: post});
+      const postEntities = new PostEntityFactory(post).items;
+      PostEntity.insert({data: postEntities});
     }
 
   }
