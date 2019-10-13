@@ -1,9 +1,10 @@
 import Increment from '@vuex-orm/core/lib/attributes/types/Increment';
 import TimeStampEntityAbstract from '@/classes/entities/abstracts/TimeStampEntityAbstract';
 import UserEntity from '@/classes/entities/UserEntity';
+import {Attr, BelongsTo} from '@vuex-orm/core';
 
 export default class MediaEntityAbstract extends TimeStampEntityAbstract {
-  public static fields(): {id: Increment} {
+  public static fields(): {id: Increment, createdAt: Attr, updatedAt: Attr, user_id: Attr, author: BelongsTo } {
     return {
       ...super.fields(),
       ...{

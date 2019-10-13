@@ -10,9 +10,9 @@
 
 <script lang="ts">
 import {Component, Vue} from 'vue-property-decorator';
-import {Item} from '@vuex-orm/core/lib/data';
-import DbSeeder from '@/classes/seeders/DbSeeder';
+import DbSeeder from '@/classes/seeders/DbSeeder'
 import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
+import {Item} from '@vuex-orm/core/lib/data';
 
 /* Additional components must be handled outside of the component instance */
 @Component({})

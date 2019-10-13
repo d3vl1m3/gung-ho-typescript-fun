@@ -1,11 +1,12 @@
 import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
 import Error from '@/classes/models/Error';
 import ErrorEntityFactory from '@/classes/factories/ErrorEntityFactory';
+import ErrorEntityFieldsInterface from '@/classes/entities/interfaces/ErrorEntityFieldsInterface';
 
 export default class ErrorEntity extends EntityAbstract {
   public static entity = 'errors';
 
-  public static fields() {
+  public static fields(): ErrorEntityFieldsInterface {
     return {
       ...super.fields(),
       ...{

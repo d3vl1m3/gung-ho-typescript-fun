@@ -1,3 +1,4 @@
+// todo: change this to a builder class.
 import Error from '@/classes/models/Error';
 import ErrorCollectionService from '@/classes/services/ErrorCollectionService';
 import ErrorEntity from '@/classes/entities/ErrorEntity';
@@ -32,10 +33,11 @@ export default class DbSeeder {
     }
   }
 
+  // todo: see if all of theses can be extracted to a single function with config
   private static seedUsers(requiredAmount: number = 5) {
-    const userCollection = new UserCollectionService(requiredAmount);
+    const collection = new UserCollectionService(requiredAmount);
     UserEntity.insert({
-      data: new UserEntityFactory(userCollection).items,
+      data: new UserEntityFactory(collection).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error({note: 'Failed to persist users'}));
@@ -46,9 +48,9 @@ export default class DbSeeder {
   }
 
   private static seedPosts(requiredAmount: number = 5) {
-    const postCollection = new PostCollectionService(requiredAmount);
+    const collection = new PostCollectionService(requiredAmount);
     PostEntity.insert({
-      data: new PostEntityFactory(postCollection).items,
+      data: new PostEntityFactory(collection).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error({note: 'Failed to persist posts'}));
@@ -59,9 +61,9 @@ export default class DbSeeder {
   }
 
   private static seedImages(requiredAmount: number = 5) {
-    const imageCollection = new ImageCollectionService(requiredAmount);
+    const collection = new ImageCollectionService(requiredAmount);
     ImageEntity.insert({
-      data: new ImageEntityFactory(imageCollection).items,
+      data: new ImageEntityFactory(collection).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error({note: 'Failed to persist images'}));
@@ -72,8 +74,9 @@ export default class DbSeeder {
   }
 
   private static seedErrors(requiredAmount: number = 5) {
+    const collection = new ErrorCollectionService(requiredAmount);
     ErrorEntity.insert({
-      data: new ErrorEntityFactory(new ErrorCollectionService(requiredAmount)).items,
+      data: new ErrorEntityFactory(collection).items,
     }).then((ref) => {
       if ( !ref ) {
         ErrorEntity.add(new Error({note: 'Failed to persist error'}));
