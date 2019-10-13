@@ -13,7 +13,13 @@
     "interface-name": false,
     "no-consecutive-blank-lines": false,
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+	  "ordered-imports": [
+		  true,
+		  {
+			  "import-sources-order": "any",
+			  "named-imports-order": "case-insensitive"
+	    }
+	  ],
     "quotemark": [true, "single"],
 	  "variable-name": [
 		  true,

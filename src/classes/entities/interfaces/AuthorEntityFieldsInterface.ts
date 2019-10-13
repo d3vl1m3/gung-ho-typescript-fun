@@ -1,4 +1,4 @@
-import {BelongsTo, Attr} from '@vuex-orm/core';
+import {Attr, BelongsTo} from '@vuex-orm/core';
 import EntityFieldsInterface from '@/classes/entities/interfaces/EntityFieldsInterface';
 
 export default interface AuthorEntityFieldsInterface extends EntityFieldsInterface {
