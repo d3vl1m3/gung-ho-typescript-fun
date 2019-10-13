@@ -1,7 +1,5 @@
-import Item from '@vuex-orm/core/lib/data/Item';
-import UserEntity from '@/classes/entities/UserEntity';
+import PropsInterface from '@/classes/models/interfaces/PropsInterface';
 
-export default interface AuthorPropsInterface {
-  author: Item<UserEntity>;
-
+export default interface AuthorPropsInterface extends PropsInterface {
+  author: number;
 }
