@@ -5,7 +5,7 @@ import PostEntity from '@/classes/entities/PostEntity';
 export default class User {
   private readonly _email: string = '';
   private readonly _name: string = '';
-  private readonly _posts: Array<Item<PostEntity>>|null = [];
+  private readonly _posts: Array<Item<PostEntity>> = [];
 
   get email(): string {
     return this._email;
@@ -15,14 +15,14 @@ export default class User {
     return this._name;
   }
 
-  get posts(): Array<Item<PostEntity>> | null {
+  get posts(): Array<Item<PostEntity>> {
     return this._posts;
   }
 
   constructor(options: UserPropsInterface) {
     this._email = options.email;
     this._name = options.name;
-    this._posts = options.posts ? options.posts  : null;
+    this._posts = options.posts ? options.posts  : this._posts;
   }
 
 }
