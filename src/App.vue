@@ -1,9 +1,29 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <pre>
-      {{ items }}
-    </pre>
+    <form ref="form" v-on:submit.prevent="submitForm">
+      <div>
+        <label>
+          Author:
+          <select name="author">
+            <option v-for="author in getAuthors" :value="author.id">{{ author.name }}</option>
+          </select>
+        </label>
+      </div>
+      <div>
+        <label>
+          Title: <input type="text" name="title">
+        </label>
+      </div>
+      <div>
+        <label>
+          Body: <textarea type="text" name="body"></textarea>
+        </label>
+      </div>
+      <div>
+        <button type="submit">Submit form</button>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -12,14 +32,37 @@ import {Component, Vue} from 'vue-property-decorator';
 import DbSeeder from '@/classes/seeders/DbSeeder';
 import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
 import {Item} from '@vuex-orm/core/lib/data';
+import UserEntity from '@/classes/entities/UserEntity';
+import Post from '@/classes/models/Post';
+import FormDataPostModelPropsFactory from '@/classes/factories/models/FormDataPostModelPropsFactory';
+import PostEntity from '@/classes/entities/PostEntity';
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
 
 export default class App extends Vue {
   protected items: Array<Item<EntityAbstract>> = [];
-  public mounted() {
+
+  public created() {
     DbSeeder.init();
+  }
+
+  get getAuthors() {
+    return UserEntity.query().get();
+  }
+
+  protected submitForm() {
+    const form = this.$refs.form as HTMLFormElement;
+
+    const postProps = new FormDataPostModelPropsFactory({form}).props;
+
+    console.log(postProps);
+
+    if ( postProps ) {
+      const post = new Post(postProps);
+      PostEntity.insert({data: post});
+    }
+
   }
 }
 </script>
