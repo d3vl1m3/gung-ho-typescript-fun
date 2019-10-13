@@ -6,6 +6,7 @@ import CollectionAbstract from '@/classes/collections/abstracts/CollectionAbstra
 // @ts-ignore
 export default class MediaEntityFactoryAbstract <T extends CollectionAbstract<U>, U extends MediaMixin >
   extends EntityFactoryAbstract<T, U> {
+  /* todo: Update each 'format' return type to match an entity object */
   protected format(item: U): object {
     return {
       createdAt:  item.createdAt,
