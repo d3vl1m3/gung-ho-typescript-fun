@@ -24,6 +24,7 @@
 	  "variable-name": [
 		  true,
 		  "allow-leading-underscore"
-	  ]
+	  ],
+	  "prefer-for-of": false
   }
 }
