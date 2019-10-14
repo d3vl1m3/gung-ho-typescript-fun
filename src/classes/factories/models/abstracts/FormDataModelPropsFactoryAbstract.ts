@@ -24,7 +24,7 @@ export default abstract class FormDataModelPropsFactoryAbstract<T extends PropsI
 
   get props(): T|null {
     const generatedProps = this.generateProps();
-    return this.hasRequiredFields() && generatedProps ? generatedProps : null;
+    return this.hasRequiredFields() ? generatedProps : null;
   }
   set props(value: T | null) {
     this._props = value;
