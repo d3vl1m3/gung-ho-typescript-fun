@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Author | ts-classes</title>
+	<title>Media | ts-classes</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_classes_models_traits_author_.html">&quot;classes/models/traits/Author&quot;</a>
+					<a href="../modules/_classes_models_media_.html">&quot;classes/models/Media&quot;</a>
 				</li>
 				<li>
-					<a href="_classes_models_traits_author_.author.html">Author</a>
+					<a href="_classes_models_media_.media.html">Media</a>
 				</li>
 			</ul>
-			<h1>Class Author</h1>
+			<h1>Class Media</h1>
 		</div>
 	</div>
 </header>
@@ -73,13 +73,31 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Author</span>
+						<a href="_classes_models_mixins_author_.author.html" class="tsd-signature-type">Author</a>
+					</li>
+					<li>
+						<a href="_classes_models_mixins_timestamp_.timestamp.html" class="tsd-signature-type">Timestamp</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="../interfaces/_classes_models_mixins_mediamixin_.mediamixin.html" class="tsd-signature-type">MediaMixin</a>
+								<span class="target">Media</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="_classes_models_image_.image.html" class="tsd-signature-type">Image</a>
+									</li>
+									<li>
+										<a href="_classes_models_post_.post.html" class="tsd-signature-type">Post</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="_classes_models_mixins_author_.author.html" class="tsd-signature-type">Author</a></li>
+					<li><a href="_classes_models_mixins_timestamp_.timestamp.html" class="tsd-signature-type">Timestamp</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -89,19 +107,23 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_classes_models_traits_author_.author.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_classes_models_media_.media.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-private tsd-is-private-protected">
+						<section class="tsd-index-section tsd-is-inherited tsd-is-private-protected">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_classes_models_traits_author_.author.html#_author" class="tsd-kind-icon">_author</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_classes_models_media_.media.html#_author" class="tsd-kind-icon">_author</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_classes_models_media_.media.html#_createdat" class="tsd-kind-icon">_created<wbr>At</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_classes_models_media_.media.html#_updatedat" class="tsd-kind-icon">_updated<wbr>At</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section ">
+						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_classes_models_traits_author_.author.html#author" class="tsd-kind-icon">author</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_classes_models_media_.media.html#author" class="tsd-kind-icon">author</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_classes_models_media_.media.html#createdat" class="tsd-kind-icon">created<wbr>At</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_classes_models_media_.media.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,59 +131,126 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Author<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_classes_models_interfaces_authorpropsinterface_.authorpropsinterface.html" class="tsd-signature-type">AuthorPropsInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_classes_models_traits_author_.author.html" class="tsd-signature-type">Author</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Media<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_classes_models_interfaces_mediapropsinterface_.mediapropsinterface.html" class="tsd-signature-type">MediaPropsInterface</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_classes_models_media_.media.html" class="tsd-signature-type">Media</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="_classes_models_mixins_author_.author.html">Author</a>.<a href="_classes_models_mixins_author_.author.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in classes/models/traits/Author.ts:6</li>
+									<li>Defined in classes/models/Media.ts:6</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>options: <a href="../interfaces/_classes_models_interfaces_authorpropsinterface_.authorpropsinterface.html" class="tsd-signature-type">AuthorPropsInterface</a></h5>
+									<h5>options: <a href="../interfaces/_classes_models_interfaces_mediapropsinterface_.mediapropsinterface.html" class="tsd-signature-type">MediaPropsInterface</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_classes_models_traits_author_.author.html" class="tsd-signature-type">Author</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_classes_models_media_.media.html" class="tsd-signature-type">Media</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-private tsd-is-private-protected">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited tsd-is-private-protected">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 					<a name="_author" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _author</h3>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _author</h3>
 					<div class="tsd-signature tsd-kind-icon">_author<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">&lt;</span><a href="_classes_entities_userentity_.userentity.html" class="tsd-signature-type">UserEntity</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="_classes_models_mixins_author_.author.html">Author</a>.<a href="_classes_models_mixins_author_.author.html#_author">_author</a></p>
 						<ul>
-							<li>Defined in classes/models/traits/Author.ts:6</li>
+							<li>Defined in classes/models/mixins/Author.ts:6</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_createdat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _created<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">_created<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_classes_models_mixins_timestamp_.timestamp.html">Timestamp</a>.<a href="_classes_models_mixins_timestamp_.timestamp.html#_createdat">_createdAt</a></p>
+						<ul>
+							<li>Defined in classes/models/mixins/Timestamp.ts:4</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="_updatedat" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> _updated<wbr>At</h3>
+					<div class="tsd-signature tsd-kind-icon">_updated<wbr>At<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Date</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_classes_models_mixins_timestamp_.timestamp.html">Timestamp</a>.<a href="_classes_models_mixins_timestamp_.timestamp.html#_updatedat">_updatedAt</a></p>
+						<ul>
+							<li>Defined in classes/models/mixins/Timestamp.ts:5</li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group ">
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 					<a name="author" class="tsd-anchor"></a>
 					<h3>author</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> author<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">&lt;</span><a href="_classes_entities_userentity_.userentity.html" class="tsd-signature-type">UserEntity</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Inherited from <a href="_classes_models_mixins_author_.author.html">Author</a>.<a href="_classes_models_mixins_author_.author.html#author">author</a></p>
 								<ul>
-									<li>Defined in classes/models/traits/Author.ts:12</li>
+									<li>Defined in classes/models/mixins/Author.ts:8</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Item</span><span class="tsd-signature-symbol">&lt;</span><a href="_classes_entities_userentity_.userentity.html" class="tsd-signature-type">UserEntity</a><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="createdat" class="tsd-anchor"></a>
+					<h3>created<wbr>At</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> createdAt<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_classes_models_mixins_timestamp_.timestamp.html">Timestamp</a>.<a href="_classes_models_mixins_timestamp_.timestamp.html#createdat">createdAt</a></p>
+								<ul>
+									<li>Defined in classes/models/mixins/Timestamp.ts:7</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">undefined</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="updatedat" class="tsd-anchor"></a>
+					<h3>updated<wbr>At</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> updatedAt<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">undefined</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_classes_models_mixins_timestamp_.timestamp.html">Timestamp</a>.<a href="_classes_models_mixins_timestamp_.timestamp.html#updatedat">updatedAt</a></p>
+								<ul>
+									<li>Defined in classes/models/mixins/Timestamp.ts:11</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Date</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">undefined</span>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -174,7 +263,7 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_classes_models_traits_author_.html">"classes/models/traits/<wbr>Author"</a>
+						<a href="../modules/_classes_models_media_.html">"classes/models/<wbr>Media"</a>
 					</li>
 				</ul>
 			</nav>
@@ -183,16 +272,28 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
-						<a href="_classes_models_traits_author_.author.html" class="tsd-kind-icon">Author</a>
+						<a href="_classes_models_media_.media.html" class="tsd-kind-icon">Media</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="_classes_models_traits_author_.author.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_classes_models_media_.media.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
-								<a href="_classes_models_traits_author_.author.html#_author" class="tsd-kind-icon">_author</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_classes_models_media_.media.html#_author" class="tsd-kind-icon">_author</a>
 							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
-								<a href="_classes_models_traits_author_.author.html#author" class="tsd-kind-icon">author</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_classes_models_media_.media.html#_createdat" class="tsd-kind-icon">_created<wbr>At</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="_classes_models_media_.media.html#_updatedat" class="tsd-kind-icon">_updated<wbr>At</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_classes_models_media_.media.html#author" class="tsd-kind-icon">author</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_classes_models_media_.media.html#createdat" class="tsd-kind-icon">created<wbr>At</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_classes_models_media_.media.html#updatedat" class="tsd-kind-icon">updated<wbr>At</a>
 							</li>
 						</ul>
 					</li>

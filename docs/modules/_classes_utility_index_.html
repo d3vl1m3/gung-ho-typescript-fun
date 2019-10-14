@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;classes/models/mixins/MediaMixin&quot; | ts-classes</title>
+	<title>&quot;classes/utility/index&quot; | ts-classes</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_classes_models_mixins_mediamixin_.html">&quot;classes/models/mixins/MediaMixin&quot;</a>
+					<a href="_classes_utility_index_.html">&quot;classes/utility/index&quot;</a>
 				</li>
 			</ul>
-			<h1>External module &quot;classes/models/mixins/MediaMixin&quot;</h1>
+			<h1>External module &quot;classes/utility/index&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -71,12 +71,113 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Interfaces</h3>
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-parent-kind-external-module"><a href="../interfaces/_classes_models_mixins_mediamixin_.mediamixin.html" class="tsd-kind-icon">Media<wbr>Mixin</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_classes_utility_index_.html#compose" class="tsd-kind-icon">compose</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_classes_utility_index_.html#extend" class="tsd-kind-icon">extend</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_classes_utility_index_.html#getrandomitem" class="tsd-kind-icon">get<wbr>Random<wbr>Item</a></li>
 							</ul>
 						</section>
 					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="compose" class="tsd-anchor"></a>
+					<h3>compose</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">compose<span class="tsd-signature-symbol">(</span>defaultOptions<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, mixins<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">tor</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in classes/utility/index.ts:9</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Create a constructor function for a class implementing the given mixins.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>defaultOptions: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>options that will be used if some options are missing at construction time</p>
+									</div>
+								</li>
+								<li>
+									<h5>mixins: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>array of classes to be mixed together. The constructor of those classes will receive the options given
+										to the constructor of the composed object</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">tor</span></h4>
+							<p>a constructor function</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="extend" class="tsd-anchor"></a>
+					<h3>extend</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">extend<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span>, source<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in classes/utility/index.ts:52</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Copy properties of source object to target object excluding constructor.
+									If a property with the same exists on the target it is NOT overwritten.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> target: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> source: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="getrandomitem" class="tsd-anchor"></a>
+					<h3>get<wbr>Random<wbr>Item</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Random<wbr>Item<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in classes/utility/index.ts:60</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>a: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -87,14 +188,20 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="_classes_models_mixins_mediamixin_.html">"classes/models/mixins/<wbr>Media<wbr>Mixin"</a>
+						<a href="_classes_utility_index_.html">"classes/utility/index"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_classes_models_mixins_mediamixin_.mediamixin.html" class="tsd-kind-icon">Media<wbr>Mixin</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_classes_utility_index_.html#compose" class="tsd-kind-icon">compose</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_classes_utility_index_.html#extend" class="tsd-kind-icon">extend</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_classes_utility_index_.html#getrandomitem" class="tsd-kind-icon">get<wbr>Random<wbr>Item</a>
 					</li>
 				</ul>
 			</nav>
