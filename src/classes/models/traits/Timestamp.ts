@@ -1,19 +1,19 @@
 import TimestampPropsInterface from '@/classes/models/interfaces/TimestampPropsInterface';
 
 export default class Timestamp {
-  private readonly _createdAt: Date;
-  private readonly _updatedAt: Date;
+  protected _createdAt: Date;
+  protected _updatedAt: Date;
+
+  get createdAt(): Date | undefined {
+    return this._createdAt;
+  }
+
+  get updatedAt(): Date | undefined {
+    return this._updatedAt;
+  }
 
   constructor(options: TimestampPropsInterface) {
     this._createdAt = options.createdAt;
     this._updatedAt = options.updatedAt;
-  }
-
-  get createdAt(): Date {
-    return this._createdAt;
-  }
-
-  get updatedAt(): Date {
-    return this._updatedAt;
   }
 }

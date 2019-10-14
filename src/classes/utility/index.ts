@@ -1,22 +1,4 @@
 /**
- * Copy properties of source object to target object excluding constructor.
- * If a property with the same exists on the target it is NOT overwritten.
- *
- * @param target
- * @param source
- */
-
-export function extend(target: any = {}, source: any = []): void {
-  Object.getOwnPropertyNames(source).forEach( (name) => {
-    if (name !== 'constructor' && !target.hasOwnProperty(name)) {
-      // @ts-ignore
-      Object.defineProperty(target, name, Object.getOwnPropertyDescriptor(source, name));
-    }
-  });
-}
-
-
-/**
  * Create a constructor function for a class implementing the given mixins.
  *
  * @param defaultOptions options that will be used if some options are missing at construction time
@@ -58,3 +40,24 @@ export function compose(defaultOptions: any, mixins: any[]) {
 
   return tor;
 }
+
+/**
+ * Copy properties of source object to target object excluding constructor.
+ * If a property with the same exists on the target it is NOT overwritten.
+ *
+ * @param target
+ * @param source
+ */
+
+export function extend(target: any = {}, source: any = []): void {
+  Object.getOwnPropertyNames(source).forEach( (name) => {
+    if (name !== 'constructor' && !target.hasOwnProperty(name)) {
+      // @ts-ignore
+      Object.defineProperty(target, name, Object.getOwnPropertyDescriptor(source, name));
+    }
+  });
+}
+export function getRandomItem(a: any[]) {
+  return a[Math.floor(Math.random() * a.length)];
+}
+

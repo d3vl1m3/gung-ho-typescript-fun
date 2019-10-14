@@ -1,20 +1,21 @@
 import PostPropsInterface from '@/classes/models/interfaces/PostPropsInterface';
 import FormDataModelPropsFactoryAbstract from '@/classes/factories/models/abstracts/FormDataModelPropsFactoryAbstract';
-import TimestampPropsInterface from '@/classes/models/interfaces/TimestampPropsInterface';
-import Post from '@/classes/models/Post';
+import UserEntity from '@/classes/entities/UserEntity';
 
 export default class FormDataPostModelPropsFactory extends FormDataModelPropsFactoryAbstract<PostPropsInterface> {
-  protected _requiredFormFields: string[] = [
-    'author',
-    'title',
-    'body',
-  ];
-
-  protected _additionalProps: TimestampPropsInterface = {
-    updatedAt: new Date(Date.now()),
+  protected _defaultProps: PostPropsInterface = {
+    author: null,
+    body: '',
     createdAt: new Date(Date.now()),
+    title: '',
+    updatedAt: new Date(Date.now()),
   };
 
-  protected _requiredProps: PostPropsInterface = Post.randomOptions();
+  protected _customFilters = {
+    author: (v: string) => {
+      return UserEntity.find(parseInt(v, 10));
+    },
+  };
+
 
 }
