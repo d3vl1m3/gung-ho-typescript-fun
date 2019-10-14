@@ -1,9 +1,11 @@
+/* tslint:disable:max-classes-per-file */
 import faker from 'faker';
-import MediaMixin from '@/classes/models/mixins/MediaMixin';
 import PostPropsInterface from '@/classes/models/interfaces/PostPropsInterface';
 import UserEntity from '@/classes/entities/UserEntity';
+import {getRandomItem} from '@/classes/utility';
+import {Media} from '@/classes/models/Media';
 
-export default class Post extends MediaMixin {
+export class Post extends Media {
 
   public static random(): Post {
     return new Post(this.randomOptions());
@@ -38,8 +40,4 @@ export default class Post extends MediaMixin {
     this._title = options.title;
     this._body = options.body;
   }
-}
-
-function getRandomItem(a: any[]) {
-  return a[Math.floor(Math.random() * a.length)];
 }

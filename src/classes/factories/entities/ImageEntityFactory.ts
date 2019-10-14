@@ -1,8 +1,8 @@
-import Image from '@/classes/models/Image';
+import {Image} from '@/classes/models/Image';
 import ImageCollection from '@/classes/collections/ImageCollection';
 import MediaEntityFactoryAbstract from '@/classes/factories/entities/abstracts/MediaEntityFactoryAbstract';
 
-export default class ImageEntityFactory extends MediaEntityFactoryAbstract<ImageCollection, Image> {
+export class ImageEntityFactory extends MediaEntityFactoryAbstract<ImageCollection, Image> {
   protected format(item: Image): object {
     return {
       ...super.format(item),

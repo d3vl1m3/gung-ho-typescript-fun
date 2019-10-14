@@ -1,5 +1,5 @@
 import CollectionServiceAbstract from '@/classes/services/abstracts/CollectionServiceAbstract';
-import Post from '@/classes/models/Post';
+import {Post} from '@/classes/models/Post';
 
 export default class PostCollection extends CollectionServiceAbstract<Post> {
   protected generate(amount: number): Post[] {

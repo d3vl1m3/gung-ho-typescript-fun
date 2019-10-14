@@ -1,7 +1,10 @@
 import ImagePropsInterface from '@/classes/models/interfaces/ImagePropsInterface';
-import MediaMixin from '@/classes/models/mixins/MediaMixin';
+import Author from '@/classes/models/mixins/Author';
+import Timestamp from '@/classes/models/mixins/Timestamp';
+import {extend} from '@/classes/utility';
+import {Media} from '@/classes/models/Media';
 
-export default class Image extends MediaMixin {
+export class Image extends Media implements Author, Timestamp {
   private readonly _name: string = '';
   private readonly _href: string = '';
 
@@ -20,3 +23,7 @@ export default class Image extends MediaMixin {
   }
 
 }
+
+
+export interface Image extends Author, Timestamp {}
+extend(Image, [Author, Timestamp]);

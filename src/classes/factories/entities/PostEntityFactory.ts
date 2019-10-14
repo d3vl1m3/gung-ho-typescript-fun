@@ -1,5 +1,5 @@
 import MediaEntityFactoryAbstract from '@/classes/factories/entities/abstracts/MediaEntityFactoryAbstract';
-import Post from '@/classes/models/Post';
+import {Post} from '@/classes/models/Post';
 import PostCollection from '@/classes/collections/PostCollection';
 
 /**

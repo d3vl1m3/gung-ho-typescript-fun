@@ -5,7 +5,7 @@ import ErrorEntityFactory from '@/classes/factories/entities/ErrorEntityFactory'
 
 import ImageCollectionService from '@/classes/services/ImageCollectionService';
 import ImageEntity from '@/classes/entities/ImageEntity';
-import ImageEntityFactory from '@/classes/factories/entities/ImageEntityFactory';
+import {ImageEntityFactory} from '@/classes/factories/entities/ImageEntityFactory';
 
 import PostCollectionService from '@/classes/services/PostCollectionService';
 import PostEntity from '@/classes/entities/PostEntity';

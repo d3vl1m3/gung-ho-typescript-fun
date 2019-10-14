@@ -33,10 +33,10 @@ import DbSeeder from '@/classes/seeders/DbSeeder';
 import EntityAbstract from '@/classes/entities/abstracts/EntityAbstract';
 import {Item} from '@vuex-orm/core/lib/data';
 import UserEntity from '@/classes/entities/UserEntity';
-import Post from '@/classes/models/Post';
 import FormDataPostModelPropsFactory from '@/classes/factories/models/FormDataPostModelPropsFactory';
 import PostEntity from '@/classes/entities/PostEntity';
 import PostEntityFactory from '@/classes/factories/entities/PostEntityFactory';
+import {Post} from '@/classes/models/Post';
 
 /* Additional components must be handled outside of the component instance */
 @Component({})
