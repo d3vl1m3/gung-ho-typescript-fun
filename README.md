@@ -25,5 +25,11 @@ yarn run test
 yarn run lint
 ```
 
+
+### Compile TS docs
+```
+yarn run docs
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
